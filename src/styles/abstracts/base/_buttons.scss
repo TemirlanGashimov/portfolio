@@ -1,0 +1,50 @@
+@use '../variables' as *;
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-family: $font-main;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Hover: Farbe ändern */
+.btn:hover {
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
+/* 🔹 Text Animation Wrapper */
+.btn span {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* 🔥 Bewegung nach links */
+.btn:hover span {
+  animation: slideText 2s linear infinite;
+}
+
+/* 🔥 Keyframes */
+@keyframes slideText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-140%);
+  }
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 48px;
+}
