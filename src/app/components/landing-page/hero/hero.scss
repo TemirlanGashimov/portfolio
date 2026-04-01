@@ -1,0 +1,204 @@
+@use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/base/buttons' as *;
+
+.hero {
+    background-image: url(/images/hero/bg-hero.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links {
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.hero__nav{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero__nav a {
+position: relative;
+font-family: $font-code;
+text-decoration: none;
+color: white;
+transition: color 0.25s ease;
+}
+
+.hero__nav a::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: -10px;
+transform: translateX(-50%) scale(0);
+width: 6px;
+height: 6px;
+background-color: $primary-color;
+border-radius: 50%;
+transition: all 0.25s ease;
+opacity: 0;
+}
+
+.hero__nav a:hover::after {
+transform: translateX(-50%) scale(1);
+opacity: 1;
+}
+
+.hero__nav a.active::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.lang-switch {
+    display: flex;
+    border: 2px solid $primary-color;
+    border-radius: 30px;
+    overflow: hidden;
+    width: fit-content;  
+}
+
+.lang-switch:hover {
+    border-color: white
+}
+
+.lang-switch span {
+   padding: 6px 16px;
+   cursor: pointer;
+   color: $primary-color;
+   transition: all 0.3s ease;
+}
+
+.lang-switch span:hover {
+  opacity: 0.8;
+  
+}
+
+.lang-switch .active {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.logo__big {
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    font-weight: 700;
+    color: $primary-color;
+    line-height: 0.9;
+}
+
+.logo__text {
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.1;
+}
+
+.logo:hover .logo__big span {
+    color: transparent;
+    -webkit-text-stroke: 1px $primary-color;
+}
+
+.logo:hover .logo__text {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.hero__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero__content p {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: $font-code;
+}
+
+.hero__content h1 {
+    font-size: 128px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: $font-main;
+}
+
+.side {
+  position: absolute;
+  left: 64px;
+  top: 0;
+  
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kreis mit Pfeil */
+.scroll-indicator__icon {
+  width: 30px;
+  height: 48px;
+  border: 2px solid $primary-color;
+  border-radius: $btn-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.arrow {
+  display: inline-block;
+  animation: moveArrow 1.5s infinite ease-in-out;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+}
+
+/* Linie nach unten */
+.scroll-indicator__line {
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    $primary-color,
+    rgba(0, 255, 200, 0)
+  );
+}
