@@ -121,12 +121,12 @@ opacity: 1;
 }
 
 .hero__content {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 200px;
 }
 
 .hero__content p {
@@ -138,14 +138,13 @@ opacity: 1;
 .hero__content h1 {
     font-size: 128px;
     font-weight: 700;
-    margin-bottom: 1rem;
     font-family: $font-main;
 }
 
 .side {
   position: absolute;
   left: 64px;
-  top: 0;
+  top: 70%;
   
 }
 
@@ -195,10 +194,9 @@ opacity: 1;
 /* Linie nach unten */
 .scroll-indicator__line {
   width: 2px;
-  height: 120px;
+  height: 186px;
   background: linear-gradient(
     to bottom,
     $primary-color,
-    rgba(0, 255, 200, 0)
   );
 }
