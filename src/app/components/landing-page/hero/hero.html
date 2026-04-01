@@ -1,0 +1,67 @@
+<header class="hero">
+  <div class="nav-links">
+    <nav class="hero__nav">
+      <div class="lang-switch">
+        <span [class.active]="currentLanguage === 'EN'" (click)="setLanguage('EN')">EN</span>
+        <span [class.active]="currentLanguage === 'DE'" (click)="setLanguage('DE')">DE</span>
+      </div>
+      <a href="#" class="nav-item" [class.clicked]="active === 'about'" (click)="setActive('about')"
+        >About me</a
+      >
+      <a
+        href="#"
+        class="nav-item"
+        [class.clicked]="active === 'skills'"
+        (click)="setActive('skills')"
+        >Skills</a
+      >
+      <a
+        href="#"
+        class="nav-item"
+        [class.clicked]="active === 'projects'"
+        (click)="setActive('projects')"
+        >Projects</a
+      >
+    </nav>
+    <!-- <div class="logo">
+      <div class="logo__big">
+        <span>T</span>
+        <span>G</span>
+      </div>
+
+      <div class="logo__text">
+        <div>Temirlan</div>
+        <div>Gashimov</div>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="hero__content">
+    <p>Fullstack Developer</p>
+    <h1>Temirlan Gashimov</h1>
+    <div class="hero__buttons">
+      <a href="" class="btn"><span>Check my Work</span></a>
+      <a href="" class="btn"><span>Contact me</span></a>
+    </div>
+  </div>
+
+  <div class="side side--left">
+    <div class="scroll-indicator">
+        
+      <div class="scroll-indicator__icon">
+        <span class="arrow">↓</span>
+    </div>
+
+      <div class="scroll-indicator__line"></div>
+    </div>
+  </div>
+
+  <!-- <div class="side side--right">
+  <div class="side__email">temerlan.gashimov@gmail.com</div>
+
+  <div class="side__socials">
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</div> -->
+</header>
