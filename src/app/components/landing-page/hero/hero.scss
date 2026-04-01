@@ -10,6 +10,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .nav-links {
@@ -78,7 +79,6 @@ opacity: 1;
 
 .lang-switch span:hover {
   opacity: 0.8;
-  
 }
 
 .lang-switch .active {
@@ -126,7 +126,7 @@ opacity: 1;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 180px;
 }
 
 .hero__content p {
@@ -144,8 +144,7 @@ opacity: 1;
 .side {
   position: absolute;
   left: 64px;
-  top: 70%;
-  
+  top: 70%; 
 }
 
 .scroll-indicator {
@@ -168,7 +167,6 @@ opacity: 1;
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
-
 }
 
 .arrow {
@@ -194,9 +192,95 @@ opacity: 1;
 /* Linie nach unten */
 .scroll-indicator__line {
   width: 2px;
+  z-index: 1;
   height: 186px;
   background: linear-gradient(
     to bottom,
-    $primary-color,
+    $primary-color,   
   );
+}
+
+.side--right {
+  position: absolute;
+    right: 64px;
+    top: 50%;
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* Email vertikal */
+.side__email {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Icons */
+.side__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side__socials img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* weiß machen */
+  transition: 0.3s;
+}
+
+.side__socials img:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 6px #00ffc8);
+}
+
+/* Linie */
+.side__line {
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    white,
+  );
+}
+
+.marquee {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
+    transform: rotate(-3deg);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    }
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee span {
+    white-space: nowrap;
+    padding-right: 50px;
+    font-size: 32px;
+    color: $primary-color;
+    font-family: $font-main; 
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
