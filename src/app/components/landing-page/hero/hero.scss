@@ -1,5 +1,7 @@
 @use '../../../../styles/abstracts/variables' as *;
 @use '../../../../styles/abstracts/base/buttons' as *;
+@use '../../../../styles/abstracts/functions' as *;
+@use '../../../../styles/abstracts/mixins' as *;
 
 .hero {
     background-image: url(/images/hero/bg-hero.png) ;
@@ -8,22 +10,20 @@
     background-size: cover;
     
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     position: relative;
 }
 
 .nav-links {
-   display: flex;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
     padding: 2rem 4rem;
 }
 
 .hero__nav{
-    display: flex;
+    @include flex-center;
     gap: 40px;
-    align-items: center;
 }
 
 .hero__nav a {
@@ -88,45 +88,44 @@ opacity: 1;
     transition: all 0.2s ease;
 }
 
-.logo {
-   display: flex;
-   align-items: center;
-   gap: 12px;
-}
+// .logo {
+//    @include flex-center;
+//    gap: 12px;
+// }
 
-.logo__big {
-    display: flex;
-    flex-direction: column;
-    font-size: 60px;
-    font-weight: 700;
-    color: $primary-color;
-    line-height: 0.9;
-}
+// .logo__big {
+//     display: flex;
+//     flex-direction: column;
+//     font-size: 60px;
+//     font-weight: 700;
+//     color: $primary-color;
+//     line-height: 0.9;
+// }
 
-.logo__text {
-    font-size: 26px;
-    font-weight: 600;
-    color: white;
-    line-height: 1.1;
-}
+// .logo__text {
+//     font-size: 26px;
+//     font-weight: 600;
+//     color: white;
+//     line-height: 1.1;
+// }
 
-.logo:hover .logo__big span {
-    color: transparent;
-    -webkit-text-stroke: 1px $primary-color;
-}
+// .logo:hover .logo__big span {
+//     color: transparent;
+//     -webkit-text-stroke: 1px $primary-color;
+// }
 
-.logo:hover .logo__text {
-    color: transparent;
-    -webkit-text-stroke: 1px white;
-}
+// .logo:hover .logo__text {
+//     color: transparent;
+//     -webkit-text-stroke: 1px white;
+// }
 
 .hero__content {
-    display: flex;
+    position: relative;
+    @include flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     margin-top: 180px;
+    z-index: 2;
 }
 
 .hero__content p {
@@ -145,12 +144,12 @@ opacity: 1;
   position: absolute;
   left: 64px;
   top: 70%; 
+  z-index: 1;
 }
 
 .scroll-indicator {
-  display: flex;
+    @include flex-center;
   flex-direction: column;
-  align-items: center;
 }
 
 /* Kreis mit Pfeil */
@@ -159,9 +158,7 @@ opacity: 1;
   height: 48px;
   border: 2px solid $primary-color;
   border-radius: $btn-radius;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ @include flex-center;
   color: white;
   font-size: 18px;
   margin-bottom: 10px;
@@ -190,7 +187,7 @@ opacity: 1;
 }
 
 /* Linie nach unten */
-.scroll-indicator__line {
+.left__line {
   width: 2px;
   z-index: 1;
   height: 186px;
@@ -203,11 +200,12 @@ opacity: 1;
 .side--right {
   position: absolute;
     right: 64px;
-    top: 50%;
-    display: flex; 
+    top: 39%;
+    @include flex-center;
     flex-direction: column;
     align-items: flex-end;
     gap: 20px;
+    z-index: 1;
 }
 
 /* Email vertikal */
@@ -221,27 +219,55 @@ opacity: 1;
 
 /* Icons */
 .side__socials {
-  display: flex;
+    @include flex-center;
   flex-direction: column;
   gap: 16px;
 }
 
-.side__socials img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1); /* weiß machen */
-  transition: 0.3s;
+.side__socials a {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.side__socials img:hover {
-  transform: translateY(-3px);
-  filter: drop-shadow(0 0 6px #00ffc8);
+.side__socials img {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.side__socials a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.side__socials a::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%) scale(0.5);
+
+
+    right: -14px;
+    width: 6px;
+    height: 6px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    opacity: 0;
+    
+    transition: all 0.3s ease;
+}
+
+.side__socials a:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    right: -14px; /* kleiner Slide */
 }
 
 /* Linie */
-.side__line {
+.right__line {
   width: 2px;
-  height: 100px;
+  height: 160px;
   background: linear-gradient(
     to bottom,
     white,
@@ -257,8 +283,9 @@ opacity: 1;
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(3px);
     transform: rotate(-3deg);
-    display: flex;
-    align-items: center;
+    @include flex-center;
+    // display: flex;
+    // align-items: center;
     z-index: 1;
     }
 
