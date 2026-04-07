@@ -35,9 +35,127 @@
 }
 
 .skills__title {
-    font-size: 48px;
+    font-size: 64px;
     color: $primary-color;
+    font-weight: bold;
     margin-bottom: 20px;
     font-family: $font-code;
-    font-weight: bold; ///---///
 }
+
+.skills__text {
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.skills__heading {
+    font-size: 24px;
+    font-family: $font-code;
+    padding-bottom: 10px;
+}
+
+.skills__highlight {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: $font-code;
+    color: $primary-color;
+}
+
+.skills__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.skills__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    padding: 30px;
+}
+
+.skills__item {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .skills__label {
+        font-size: 18px;
+        font-family: $font-code;
+    }
+
+    &:hover {
+       transform: scale(1.05);
+    }
+}
+
+.skills__tooltip {
+  position: absolute;
+  bottom: 87%; // über dem Icon
+  left: 80%;
+  transform: translateX(-50%) translateY(10px) scale(0.95);
+  width: 170px;
+  padding: 8px 8px 16px 8px;
+  background: white;
+  border-radius: 20px;
+  color: $primary-color;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10; // über allem
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.skills__tooltip-text {
+    padding-bottom: 8px;
+    font-size: 16px;
+
+}
+
+.skills__tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 25%;
+  transform: translateX(-50%);
+
+  border-width: 10px;
+  border-style: solid;
+  border-color: #e9e9e9 transparent transparent transparent;
+}
+
+.skills__item:hover .skills__tooltip,
+.skills__tooltip:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.skills__tooltip-icons {
+    @include flex-center;
+    gap: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+ 
