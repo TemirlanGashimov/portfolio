@@ -1,0 +1,43 @@
+@use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/base/buttons' as *;
+@use '../../../../styles/abstracts/functions' as *;
+@use '../../../../styles/abstracts/mixins' as *;
+
+.skills {
+    background-image: url(/images/skills_bg/bg_skills.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 80px 10%;
+}
+
+.skills__container {
+    @include flex-center;
+    justify-content: space-between;
+    gap: 60px;
+}
+.skills__content {
+    flex: 1;
+}
+
+.skills__subtitle {
+    color: $primary-color;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.skills__card {
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    padding: 40px;
+    background: rgba(43, 212, 189, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.skills__title {
+    font-size: 48px;
+    color: $primary-color;
+    margin-bottom: 20px;
+    font-family: $font-code;
+    font-weight: bold; ///---///
+}
