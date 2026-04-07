@@ -12,72 +12,55 @@
         how important it is for you to keep up with the rapid changes in web development.
       </p>
 
-      <p class="skills__highlight">You need another skill?</p>
-
+      <h3 class="skills__heading">
+       You need <span class="skills__highlight">another skill?</span>
+      </h3>
       <p class="skills__description">Feel free to contact me...</p>
 
-      <a href="#" class="skills__button">Let's Talk</a>
+      <a href="#" class="btn"><span>Let's Talk</span></a>
     </div>
   </div>
 
-  <div class="skills__grid">
+    <div class="skills__grid">
 
-    <div class="skills__item">
-      <img src="icons/html.png" alt="HTML logo" />
-      <p>HTML</p>
+      @for (skill of skills; track skill.name) {
+
+        @if (skill.active) {
+
+          <div class="skills__item">
+
+            <img [src]="'icons/' + skill.icon" [alt]="skill.name + ' logo'">
+            <p class="skills__label">{{ skill.name }}</p>
+
+            @if (skill.tooltip) {
+              <div class="skills__tooltip">
+                <p class="skills__tooltip-text">
+                  I have a special interest in learning
+                </p>
+
+                <div class="skills__tooltip-icons">
+
+                  <div>
+                    <img src="icons/react.svg" alt="React">
+                    <p>React</p>
+                  </div>
+
+                  <div>
+                    <img src="icons/vue.svg" alt="Vue">
+                    <p>Vue.js</p>
+                  </div>
+                </div>
+              </div>
+            }
+
+          </div>
+        }
+      }
+
     </div>
 
-     <div class="skills__item">
-      <img src="icons/css.png" alt="CSS logo" />
-      <p>CSS</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/javascript.png" alt="JavaScript logo" />
-      <p>JavaScript</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/material_design.png" alt="Material Design logo" />
-      <p>Material Design</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/typescript.png" alt="TypeScript logo" />
-      <p>TypeScript</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/angular.png" alt="Angular logo" />
-      <p>Angular</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/supabase.png" alt="Supabase logo" />
-      <p>Supabase</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/git.png" alt="Git logo" />
-      <p>Git</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/rest-api.png" alt="Rest-Api logo" />
-      <p>REST-API</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/scrum.png" alt="Scrum logo" />
-      <p>Scrum</p>
-    </div>
-
-     <div class="skills__item">
-      <img src="icons/growth_mindset.png" alt="Growth Mindset logo" />
-      <p>Growth Mindset</p>
-    </div>
 
 
   </div>
-  </div>
+  <!-- </div> -->
 </section>
