@@ -11,27 +11,25 @@
   overflow: hidden;
   font-family: $font-main;
   transition: all 0.3s ease;
-}
 
-/* 🔹 Hover: Farbe ändern */
-.btn:hover {
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &:hover {
   border-color: $primary-color;
   color: $primary-color;
 }
 
-/* 🔹 Text Animation Wrapper */
-.btn span {
-  display: inline-block;
-  white-space: nowrap;
-  transition: transform 0.3s ease;
-  font-family: $font-main;
-  font-weight: 400;
-  font-size: 18px;
-}
-
 /* 🔥 Bewegung nach links */
-.btn:hover span {
+  &:hover span {
   animation: slideText 2s linear infinite;
+}
 }
 
 /* 🔥 Keyframes */
