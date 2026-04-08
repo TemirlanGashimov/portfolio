@@ -1,0 +1,98 @@
+@use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/base/buttons' as *;
+@use '../../../../styles/abstracts/functions' as *;
+@use '../../../../styles/abstracts/mixins' as *;
+
+.portfolio {
+    background-color: rgba(28, 28, 28, 1);
+    padding: 80px 120px;
+}
+
+.container {
+    max-width: 70%;
+}
+
+.subtitle {
+    color: $primary-color;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title{
+    font-size: 64px;
+    font-weight: bold;
+    color: $primary-color;
+    font-family: $font-code;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 500px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.projects {
+    margin-top: 40px;
+    border-top: 1px solid $primary-color;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 35px 30px;
+    transition: background 0.5s ease;
+    border-bottom: 1px solid $primary-color;
+    cursor: pointer;
+}
+
+.project-name {
+    font-size: 24px;
+    font-family: $font-code;
+    font-weight: 700;
+}
+
+.arrow {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.tech {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.project:hover {
+    background: rgb(36, 77, 70);
+
+    .arrow {
+        opacity: 1;
+        font-weight: 300;
+    }
+}
+
+.preview {
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%) translateX(-20px);
+
+    opacity: 0;
+    transition: 0.4s ease;
+    pointer-events: none;
+    width: 300px;
+}
+
+.preview img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.project:hover .preview {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
