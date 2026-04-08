@@ -1,1 +1,33 @@
-<p>projects works!</p>
+<section class="portfolio">
+  <div class="container">
+
+    <p class="subtitle">Portfolio</p>
+
+    <h2 class="title">Featured Projects</h2>
+
+    <p class="description">
+        Explore a selection of my work here - Interact with projects to see my skills in acction
+    </p>
+
+    <div class="projects">
+  
+    <div class="project" *ngFor="let project of activeProjects">
+        <p class="project-name">
+            {{ project.name }} 
+            <span class="arrow">↗</span>
+        </p>
+
+        <span class="tech">
+            {{ project.technologies.join(' | ') }}
+        </span>
+
+        <div class="preview">
+            <img [src]="project.image" [alt]="project.name">
+        </div>
+
+    </div>
+
+    </div>
+
+  </div>
+</section>
