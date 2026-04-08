@@ -4,7 +4,8 @@
 @use '../../../../styles/abstracts/mixins' as *;
 
 .skills {
-    background-image: url(/images/skills_bg/bg_skills.png);
+    // background-image: url(/images/skills_bg/bg_skills.png);
+     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1C1C1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
