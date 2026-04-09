@@ -9,3 +9,7 @@ body {
     font-family: $font-main;
     color: white;
 }
+
+body.no-scroll {
+    overflow: hidden;
+}
