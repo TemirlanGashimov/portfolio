@@ -36,7 +36,7 @@
 
     <!--Left-->
     <div class="modal-left">
-      <h1>{{ selectedProject.number }}</h1>
+      <h1>{{ getProjectNumber(selectedProject!) }}</h1>
 
       <h2>{{ selectedProject.name }}</h2>
 
@@ -72,7 +72,7 @@
       <img [src]="selectedProject.modalImage" [alt]="selectedProject.name" />
     </div>
 
-    <button class="next-project" (click)="nextProject()">
+    <button class="next-project" (click)="nextProject()" [disabled]="activeProjects.length <= 1">
         <span class="text">Next project</span>
         <span class="arrow">→</span>
     </button>
