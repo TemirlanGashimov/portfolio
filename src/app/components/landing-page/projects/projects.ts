@@ -10,7 +10,6 @@ interface Project {
   description: string;
   github: string;
   live: string;
-  number: string;
 }
 
 
@@ -43,7 +42,6 @@ export class Projects {
       image: 'images/projects/join.png',
       modalImage: 'images/projects/join_dialog.png',
       active: true,
-      number: '01',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
       github: '',
       live: ''
@@ -55,7 +53,6 @@ export class Projects {
       image: 'images/projects/el_pollo_loco.png',
       modalImage: 'images/projects/el_pollo_loco_dialog.png',
       active: true,
-      number: '02',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       github: '',
       live: ''
@@ -67,7 +64,6 @@ export class Projects {
       image: 'images/projects/dabubble.png',
       modalImage: 'images/projects/dabubble_dialog.png',
       active: true,
-      number: '03',
       description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
       github: '',
       live: ''
@@ -91,12 +87,14 @@ closeProject() {
 }
 
 nextProject() {
-  if (!this.selectedProject) return;
+  const active = this.activeProjects;
 
-  const index = this.projects.findIndex(p => p === this.selectedProject);
-  const nextIndex = (index +1) % this.projects.length;
+  if (!this.selectedProject || active.length <=1) return;
 
-  this.selectedProject = this.projects[nextIndex];
+  const index = active.findIndex(p => p === this.selectedProject);
+  const nextIndex = (index +1) % active.length;
+
+  this.selectedProject = active[nextIndex];
 }
 
 @HostListener('document:keydown.escape')
@@ -104,6 +102,11 @@ handleEscape() {
   if (this.selectedProject) {
     this.closeProject();
   }
+}
+
+getProjectNumber(project: Project): string {
+  const index = this.activeProjects.findIndex(p => p === project);
+  return (index +1).toString().padStart(2, '0');
 }
 
 @ViewChild('modalRef') modalRef!: ElementRef;
