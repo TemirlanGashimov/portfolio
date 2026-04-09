@@ -1,33 +1,80 @@
 <section class="portfolio">
   <div class="container">
-
     <p class="subtitle">Portfolio</p>
 
     <h2 class="title">Featured Projects</h2>
 
     <p class="description">
-        Explore a selection of my work here - Interact with projects to see my skills in acction
+      Explore a selection of my work here - Interact with projects to see my skills in acction
     </p>
 
     <div class="projects">
-  
-    <div class="project" *ngFor="let project of activeProjects">
+      <div class="project" *ngFor="let project of activeProjects" (click)="openProject(project)">
         <p class="project-name">
-            {{ project.name }} 
-            <span class="arrow">↗</span>
+          {{ project.name }}
+          <span class="arrow">↗</span>
         </p>
 
         <span class="tech">
-            {{ project.technologies.join(' | ') }}
+          {{ project.technologies.join(' | ') }}
         </span>
 
         <div class="preview">
-            <img [src]="project.image" [alt]="project.name">
+          <img [src]="project.image" [alt]="project.name" />
         </div>
-
+      </div>
     </div>
-
-    </div>
-
   </div>
 </section>
+
+<!--MODAL-->
+<div class="modal" *ngIf="selectedProject" (click)="closeProject()">
+ 
+    <div #modalRef class="modal-content" (click)="$event.stopPropagation()">
+    <!--Close-->
+    <span class="close" (click)="closeProject()">✕</span>
+
+    <!--Left-->
+    <div class="modal-left">
+      <h1>{{ selectedProject.number }}</h1>
+
+      <h2>{{ selectedProject.name }}</h2>
+
+      <p class="modal-title">What is this project about?</p>
+
+      <p>
+        {{ selectedProject.description }}
+      </p>
+
+      <div class="modal-tech">
+        <div class="tech-item" *ngFor="let tech of selectedProject.technologies">
+            
+            <img [src]="techIcons[tech]" [alt]="tech">
+          <span>
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <div class="modal-buttons">
+        <a href="https://github.com/TemirlanGashimov/EL_POLLO_LOCO" target="_blank">
+            GitHub <span class="arrow"> ↗ </span>
+        </a>
+
+        <a href="#" target="_blank">
+            Live Test <span class="arrow"> ↗ </span>
+        </a>
+      </div>
+    </div>
+
+    <!--Right-->
+    <div class="modal-right">
+      <img [src]="selectedProject.modalImage" [alt]="selectedProject.name" />
+    </div>
+
+    <button class="next-project" (click)="nextProject()">
+        <span class="text">Next project</span>
+        <span class="arrow">→</span>
+    </button>
+  </div>
+</div>
