@@ -1,0 +1,59 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.footer {
+    background: rgb(28, 28, 28);
+    padding: 40px 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer-center {
+    text-align: center;
+    color: $primary-color;
+    font-family: $font-code;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-right a {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.footer-right a::before{
+    content: "•";
+    position: relative;
+    left: 0;
+    transform: translateX(-10px);
+    color: $primary-color;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: $primary-color;
+}
+
+.footer-right a:hover::before {
+    opacity: 1;
+    left: -8px;
+    font-size: 20px;;
+}
