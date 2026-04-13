@@ -1,0 +1,293 @@
+@use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/base/buttons' as *;
+
+.contact {
+  background: rgb(28, 28, 28);
+  padding: 80px 80px;
+
+  &__container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  /* =========================
+     LEFT SIDE
+  ========================= */
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    color: $primary-color;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 24px;
+    letter-spacing: 1px;
+
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 0.9;
+    font-family: $font-code;
+    color: $primary-color;
+    padding-bottom: 30px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__question {
+   
+    font-weight: 700;
+    color: $primary-color;
+    font-family: $font-code;
+    font-size: 24px;
+  }
+
+  &__text {
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 20px;
+  }
+
+  &__cta {
+    font-size: 16px;
+    
+    span {
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
+
+  /* =========================
+     RIGHT SIDE (FORM)
+  ========================= */
+  &__right {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    border-top: 1px solid rgb(61, 207, 182);
+  }
+}
+
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 30px;
+  border-bottom: 1px solid rgb(61, 207, 182);
+  transition: all 0.25s ease;
+  
+
+  label {
+    font-size: 24px;
+    font-family: $font-code;
+    font-weight: 500;
+    color: $primary-color;
+  }
+
+  input,
+  textarea {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: $font-main;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &:hover input,
+  &:hover textarea {
+    color: white;
+  }
+
+  &:hover input::placeholder,
+  &:hover textarea::placeholder {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:focus-within {
+    border-bottom: 1px solid $primary-color;
+  }
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.form__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 400;
+
+  
+
+  input {
+    margin-top: 4px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .link {
+    color: $primary-color;
+    font-family: $font-code;
+
+    &:hover {
+        color: white;
+        border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+  .form__error {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ff6b6b;
+  }
+
+.form__checkbox-wrapper {
+  margin-top: 20px;
+
+  &.error .form__error--checkbox {
+    display: block;
+  }
+}
+
+.form__checkbox {
+  cursor: pointer;
+
+  input {
+    display: none; // versteckt native checkbox
+  }
+
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid $primary-color;
+    border-radius: 4px;
+    position: relative;
+    flex-shrink: 0;
+    
+  }
+
+  /* HAKEN */
+  .checkmark::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid $primary-color;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    top: 3px;
+    left: 8px;
+    opacity: 0;
+    
+  }
+
+  input:checked + .checkmark {
+    background: transparent;
+  }
+
+  input:checked + .checkmark::after {
+    opacity: 1;
+  }
+}
+
+.form__error--checkbox {
+  font-size: 14px;
+  color: #ff6b6b;
+  margin-top: 8px;
+}
+
+.contact {
+  .btn:not(.active):hover {
+    border-color: white;
+    color: white;
+  }
+
+  .btn:not(.active):hover span {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+.btn {
+    width: 130px;
+    margin-top: 20px;
+    align-self: center;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.btn.active {
+  opacity: 1;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:hover span {
+    animation: slideText 2s linear infinite;
+  }
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+
+  -webkit-text-fill-color: white !important; // Textfarbe anpassen
+  caret-color: white; // Cursor Farbe
+
+  transition: background-color 9999s ease-in-out 0s;
+}
