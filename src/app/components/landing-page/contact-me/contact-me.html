@@ -1,1 +1,83 @@
-<p>contact-me works!</p>
+<section class="contact">
+  <div class="contact__container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact__left">
+      <p class="contact__subtitle">Contact me</p>
+      <h2 class="contact__title">Let's work together</h2>
+
+      <div class="contact__description">
+        <p class="contact__question">Got a problem to solve?</p>
+
+        <p class="contact__text">
+          Encourage people to contact you and describe what role you are interested in.
+          Show that you will add value to their projects through your work.
+        </p>
+
+        <p class="contact__cta">
+          Need a Fullstack developer?
+          <span>Let’s talk!</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="contact__right">
+      <form class="contact__form" (ngSubmit)="onSubmit()">
+
+        <!-- NAME -->
+        <div class="form__group">
+          <label for="name">What's your name?</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" [placeholder]="isNameInvalid() ? '' : 'Your name goes here'">
+          <span class="form__error" *ngIf="isNameInvalid()">
+            Oops! it seems your name is missing
+        </span>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form__group">
+          <label for="email">What's your email?</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" [placeholder]="isEmailInvalid() ? '' : 'youremail@email.com'">
+          <span class="form__error" *ngIf="isEmailInvalid()">Hoppla! your email is required</span>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="form__group">
+          <label for="message">How can I help you?</label>
+          <textarea id="message" [(ngModel)]="message" name="message" rows="3" 
+                    [placeholder]="isMessageInvalid() ? '' : 'Hello Temirlan, I am interested in...'"></textarea>
+          <span class="form__error" *ngIf="isMessageInvalid()">What do you need to Develop?</span>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="form__checkbox-wrapper">
+
+          <label class="form__checkbox">
+            <input type="checkbox" id="privacy" [(ngModel)]="privacyAccepted" name="privacy">
+
+            <!-- custom box -->
+            <span class="checkmark"></span>
+
+            <span class="text">
+              I've read the <span class="link">privacy policy</span>
+              and agree to the processing of my data as outlined.
+            </span>
+          </label>
+
+          <!-- ERROR (separat!) -->
+          <span class="form__error form__error--checkbox" *ngIf="isCheckboxInvalid()">
+            Please accept the privacy policy.
+          </span>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit" class="btn" [class.active]="isFormValid()">
+          <span>Say Hello ;)</span>
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
