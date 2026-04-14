@@ -1,0 +1,42 @@
+.legal-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  border: 1px solid #00e0c6;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #0a0a0a,
+    #003c3c
+  );
+
+  color: #00e0c6;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+p, li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.date {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.7;
+}
