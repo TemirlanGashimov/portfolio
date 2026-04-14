@@ -8,15 +8,4 @@ import { Component } from '@angular/core';
 })
 export class Hero {
 
-  active: string = '';
-  
-  setActive(section: string) {
-    this.active = section;
-  }
-
-  currentLanguage: 'EN' | 'DE' = 'EN';
-
-  setLanguage(lang: 'EN' | 'DE') {
-    this.currentLanguage = lang;
-  }
 }
