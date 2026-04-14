@@ -1,6 +1,6 @@
 @use '../../../../styles/abstracts/variables' as *;
 @use '../../../../styles/abstracts/base/buttons' as *;
-
+@use '../../../../styles/abstracts/breakpoints' as *;
 .contact {
   background: rgb(28, 28, 28);
   padding: 80px 80px;
@@ -291,4 +291,9 @@ textarea:-webkit-autofill {
   caret-color: white; // Cursor Farbe
 
   transition: background-color 9999s ease-in-out 0s;
+}
+
+
+@include respond(mobile) {
+  
 }
