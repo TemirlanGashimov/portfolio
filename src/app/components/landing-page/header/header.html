@@ -5,8 +5,8 @@
   <span></span>
   </button>
    -->
-  <div class="nav-links">
-    <nav class="header__nav">
+  <div class="nav-links" >
+    <nav class="header__nav" [class.open]="menuOpen">
       <div class="lang-switch">
         <span (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</span>
         <span (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</span>
