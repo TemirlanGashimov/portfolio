@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Header {
 
-  active: string = '';
+  activeSection: string = '';
   
   setActive(section: string) {
-    this.active = section;
+    this.activeSection = section;
   }
 
   currentLanguage: 'EN' | 'DE' = 'EN';
@@ -25,4 +25,10 @@ export class Header {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+  
+  scrollTo(section: string) {
+    this.activeSection = section;
+    const element = document.getElementById(section);
+    element?.scrollIntoView({ behavior: 'smooth' });
+}
 }

@@ -1,0 +1,83 @@
+@use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/base/buttons' as *;
+@use '../../../../styles/abstracts/functions' as *;
+@use '../../../../styles/abstracts/mixins' as *;
+
+header {
+     background-image: url(..//..//..//..//..//public/images/hero/bg-hero.png);
+     background-size: cover;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.header__nav{
+    @include flex-center;
+    gap: 40px;
+}
+
+.header__nav a {
+position: relative;
+font-family: $font-code;
+text-decoration: none;
+color: white;
+transition: color 0.25s ease;
+font-size: 20px;
+}
+
+.header__nav a.active{
+    color: $primary-color;
+}
+
+.header__nav a::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: -10px;
+transform: translateX(-50%) scale(0);
+width: 6px;
+height: 6px;
+background-color: $primary-color;
+border-radius: 50%;
+transition: color 0.25s ease;
+opacity: 0;
+}
+
+.header__nav a:hover::after,
+.header__nav a.active::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.lang-switch {
+    display: flex;
+    border: 2px solid $primary-color;
+    border-radius: 30px;
+    overflow: hidden;
+    width: fit-content;  
+}
+
+.lang-switch:hover {
+    border-color: white
+}
+
+.lang-switch span {
+   padding: 6px 16px;
+   cursor: pointer;
+   color: $primary-color;
+   transition: all 0.3s ease;
+}
+
+.lang-switch span:hover {
+  opacity: 0.8;
+}
+
+.lang-switch .active {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
