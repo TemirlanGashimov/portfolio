@@ -2,6 +2,8 @@
 @use '../../../../styles/abstracts/base/buttons' as *;
 @use '../../../../styles/abstracts/functions' as *;
 @use '../../../../styles/abstracts/mixins' as *;
+@use '../../../../styles/abstracts/breakpoints' as *;
+
 
 header {
      background-image: url(..//..//..//..//..//public/images/hero/bg-hero.png);
@@ -85,9 +87,9 @@ opacity: 0;
 
 
 // .burger {
-//   position: fixed;
+//   position: absolute;
 //   top: 20px;
-//   left: 20px;
+//   right: 20px; // ✅ statt left
 //   z-index: 1000;
 
 //   display: flex;
@@ -97,6 +99,8 @@ opacity: 0;
 //   border: none;
 //   cursor: pointer;
 
+//   display: none;
+
 //   span {
 //     width: 25px;
 //     height: 3px;
@@ -104,10 +108,10 @@ opacity: 0;
 //   }
 // }
 
-// .hero__nav {
+// .header__nav {
 //   position: fixed;
 //   top: 0;
-//   left: -100%; // ❗ versteckt
+//   right: -100%; // ❗ versteckt
 //   width: 25%;
 
 //   display: flex;
@@ -126,3 +130,11 @@ opacity: 0;
 //     left: 0;
 //   }
 // }
+
+@include respond(mobile) {
+    .nav-links {
+        display: none;
+    }
+}
+
+

@@ -2,6 +2,8 @@
 @use '../../../../styles/abstracts/base/buttons' as *;
 @use '../../../../styles/abstracts/functions' as *;
 @use '../../../../styles/abstracts/mixins' as *;
+@use '../../../../styles/abstracts/breakpoints' as *;
+
 
 .hero {
     background-image: url(/images/hero/bg-hero.png) ;
@@ -113,6 +115,10 @@
   letter-spacing: 1px;
 }
 
+.mail-icon {
+  display: none;
+}
+
 /* Icons */
 .side__socials {
     @include flex-center;
@@ -208,3 +214,50 @@
     }
 }
 
+
+@include respond(mobile) {
+    .hero__content p {
+        font-size: 24px;
+    }
+
+    .hero__content h1 {
+        font-size: 62px;
+    }
+
+    .hero__buttons {
+        gap: 10px;
+        
+    }
+
+    .btn {
+      padding: 12px 14px;
+      
+    }
+
+    .marquee span {
+        font-size: 24px;
+    }
+
+    .side__email {
+        display: none;
+
+    }
+
+    .side--right {
+      right: 24px;
+      top: 68%;
+    }
+
+    .right__line {
+      height: 119px;
+    }
+
+    .side--left {
+      top: 60%;
+      left: 24px;
+    }
+
+    .left__line {
+      height: 270px;
+     }
+  }
