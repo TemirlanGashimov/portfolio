@@ -1,1 +1,25 @@
-<p>header works!</p>
+<header class="header">
+
+      <!-- <button class="burger" (click)="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+  </button>
+   -->
+  <div class="nav-links">
+    <nav class="hero__nav">
+      <div class="lang-switch">
+        <span (click)="setLanguage('EN')">EN</span>
+        <span (click)="setLanguage('DE')">DE</span>
+      </div>
+
+      <a (click)="setActive('about')">About me</a>
+      <a (click)="setActive('skills')">Skills</a>
+      <a (click)="setActive('projects')">Projects</a>
+    </nav>
+
+    <div class="logo">
+      <div>Temirlan Gashimov</div>
+    </div>
+  </div>
+</header>
