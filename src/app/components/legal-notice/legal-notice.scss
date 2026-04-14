@@ -1,42 +1,51 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.legal{
+  background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+  color: $primary-color;
+
+}
+
 .legal-container {
-  max-width: 900px;
-  margin: 80px auto;
+  margin: 0px 120px;
   padding: 40px;
-  border: 1px solid #00e0c6;
-  border-radius: 8px;
-
-  background: linear-gradient(
-    135deg,
-    #0a0a0a,
-    #003c3c
-  );
-
-  color: #00e0c6;
-  font-family: monospace;
 }
 
 h1 {
   text-align: center;
-  font-size: 48px;
-  margin-bottom: 40px;
+  font-size: 64px;
+  font-weight: 700;
+  font-family: $font-code;
+  margin-bottom: 60px;
 }
 
 h3 {
   margin-top: 30px;
-  font-size: 18px;
+  margin-bottom: 8px;
+  font-size: 19px;
+  font-weight: 700;
+  font-family: $font-main;
+  color: white;
 }
 
 p, li {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: $font-main;
+  font-weight: 400;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 24px;
 }
 
 .date {
   margin-top: 30px;
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 19px;
+  // opacity: 0.7;
+}
+
+span {
+  color: white;
 }
