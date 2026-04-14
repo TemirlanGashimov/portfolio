@@ -1,6 +1,7 @@
 @use '../../../../styles/abstracts/variables' as *;
 @use '../../../../styles/abstracts/functions' as *;
 @use '../../../../styles/abstracts/mixins' as *;
+@use '../../../../styles/abstracts/breakpoints' as *;
 
 .about-me {
     background-color: rgba(28, 28, 28, 1);
@@ -29,6 +30,7 @@
 .about-me__subtitle {
     color: $primary-color;
     font-size: 24px;
+    font-weight: 500;
 }
 
 .about-me__card {
@@ -84,4 +86,40 @@
     color: white;
     transform: translateY(-1px);
   transition: 0.1s;
+}
+
+@include respond (mobile) {
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 10px;
+    }
+
+    .about-me__content {
+        padding-top: 0;
+    }
+
+    .about-me__subtitle {
+        font-size: 18px;
+    }
+
+    .about-me__card {
+        padding: 16px;
+    }
+
+
+    .about-me__card h2 {
+        font-size: 48px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .about-me__text {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .feature {
+        font-size: 16px;
+    }
 }
