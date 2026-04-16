@@ -1,10 +1,10 @@
 <header class="header">
-  <!-- <button class="burger" (click)="toggleMenu()">
+  <button class="burger" [class.active]="menuOpen" (click)="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
   </button>
-   -->
+  
   <div class="nav-links" >
     <nav class="header__nav" [class.open]="menuOpen">
       <div class="lang-switch">
