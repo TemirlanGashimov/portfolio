@@ -1,5 +1,6 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/breakpoints' as *;
 
 .legal{
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
@@ -48,4 +49,69 @@ ul {
 
 span {
   color: white;
+}
+
+@include respond(desktop){
+
+  .legal {
+    padding: 48px;
+  }
+
+  .legal-container{
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 64px;
+  }
+
+}
+
+
+@include respond(tablet) {
+
+  .legal {
+    padding: 34px;
+  }
+
+  h1 {
+    font-size: 58px;
+  }
+}
+
+
+
+@include respond(mobile-lg){
+  .legal {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
+
+
+@include respond(mobile-max){
+  .legal {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
+
+
+
+@include respond(mobile) {
+  .legal {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+  
 }
