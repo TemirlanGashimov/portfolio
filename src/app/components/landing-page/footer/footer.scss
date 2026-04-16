@@ -1,59 +1,240 @@
 @use '../../../../styles/abstracts/variables' as *;
+@use '../../../../styles/abstracts/breakpoints' as *;
 
 .footer {
-    background: rgb(28, 28, 28);
-    padding: 40px 80px;
+  background: rgb(28, 28, 28);
+  padding: 40px 80px;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-left p {
-    margin: 5px 0;
-    font-size: 16px;
-    font-weight: 400;
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .footer-center {
-    text-align: center;
-    color: $primary-color;
-    font-family: $font-code;
-    font-size: 18px;
-    font-weight: 400;
+  text-align: center;
+  color: $primary-color;
+  font-family: $font-code;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .footer-right {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-right a {
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.footer-right a::before{
-    content: "•";
-    position: relative;
-    left: 0;
-    transform: translateX(-10px);
-    color: $primary-color;
-    opacity: 0;
-    transition: all 0.3s ease;
+.footer-right a::before {
+  content: '•';
+  position: relative;
+  left: 0;
+  transform: translateX(-10px);
+  color: $primary-color;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .footer-right a:hover {
-    color: $primary-color;
+  color: $primary-color;
 }
 
 .footer-right a:hover::before {
-    opacity: 1;
-    left: -8px;
-    font-size: 20px;;
+  opacity: 1;
+  left: -8px;
+  font-size: 20px;
+}
+
+
+@include respond(desktop) {
+  .footer {
+    padding: 48px;
+  }
+
+  .footer-container {
+    padding: 48px 0 48px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 50%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .footer-left p,
+  .footer-right a {
+    font-size: 18px;
+  }
+  .footer-center {
+    font-size: 20px;
+  }
+}
+
+@include respond(tablet) {
+  .footer {
+    padding: 34px;
+  }
+
+  .footer-container {
+    padding: 34px 0 34px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 50%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .footer-left p,
+  .footer-right a {
+    font-size: 18px;
+  }
+  .footer-center {
+    font-size: 20px;
+  }
+}
+
+
+@include respond(mobile-lg) {
+  .footer {
+    padding: 24px;
+  }
+
+  .footer-container {
+    padding: 24px 0 24px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 50%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .footer-left p,
+  .footer-right a {
+    font-size: 18px;
+  }
+  .footer-center {
+    font-size: 20px;
+  }
+}
+
+@include respond(mobile-max) {
+  .footer {
+    padding: 16px;
+  }
+
+  .footer-container {
+    padding: 24px 0 24px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 50%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .footer-left p,
+  .footer-right a {
+    font-size: 16px;
+  }
+  .footer-center {
+    font-size: 18px;
+  }
+}
+
+@include respond(mobile) {
+  .footer {
+    padding: 8px;
+  }
+
+  .footer-container {
+    padding: 24px 0 24px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 50%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .footer-left p,
+  .footer-center,
+  .footer-right a {
+    font-size: 14px;
+  }
 }

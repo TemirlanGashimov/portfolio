@@ -1,6 +1,7 @@
 @use '../../../../styles/abstracts/variables' as *;
 @use '../../../../styles/abstracts/base/buttons' as *;
 @use '../../../../styles/abstracts/breakpoints' as *;
+
 .contact {
   background: rgb(28, 28, 28);
   padding: 80px 80px;
@@ -18,7 +19,6 @@
     }
   }
 
-
   /* =========================
      LEFT SIDE
   ========================= */
@@ -33,7 +33,6 @@
     font-weight: 500;
     padding-bottom: 24px;
     letter-spacing: 1px;
-
   }
 
   &__title {
@@ -52,7 +51,6 @@
   }
 
   &__question {
-   
     font-weight: 700;
     color: $primary-color;
     font-family: $font-code;
@@ -68,13 +66,12 @@
 
   &__cta {
     font-size: 16px;
-    
+
     span {
       font-weight: 700;
       color: $primary-color;
     }
   }
-
 
   /* =========================
      RIGHT SIDE (FORM)
@@ -92,7 +89,6 @@
   }
 }
 
-
 /* =========================
    FORM ELEMENTS
 ========================= */
@@ -103,7 +99,6 @@
   padding: 18px 30px;
   border-bottom: 1px solid rgb(61, 207, 182);
   transition: all 0.25s ease;
-  
 
   label {
     font-size: 24px;
@@ -159,12 +154,10 @@
 ========================= */
 .form__checkbox {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   font-size: 15px;
   font-weight: 400;
-
-  
 
   input {
     margin-top: 4px;
@@ -177,17 +170,17 @@
     font-family: $font-code;
 
     &:hover {
-        color: white;
-        border-bottom: 1px solid $primary-color;
+      color: white;
+      border-bottom: 1px solid $primary-color;
     }
   }
 }
 
-  .form__error {
-    font-size: 14px;
-    font-weight: 400;
-    color: #ff6b6b;
-  }
+.form__error {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff6b6b;
+}
 
 .form__checkbox-wrapper {
   margin-top: 20px;
@@ -211,12 +204,11 @@
     border-radius: 4px;
     position: relative;
     flex-shrink: 0;
-    
   }
 
   /* HAKEN */
   .checkmark::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 6px;
     height: 12px;
@@ -226,7 +218,6 @@
     top: 3px;
     left: 8px;
     opacity: 0;
-    
   }
 
   input:checked + .checkmark {
@@ -256,13 +247,12 @@
   }
 }
 
-
 .btn {
-    width: 130px;
-    margin-top: 20px;
-    align-self: center;
-    opacity: 0.6;
-    transition: all 0.3s ease;
+  width: 130px;
+  margin-top: 20px;
+  align-self: center;
+  opacity: 0.6;
+  transition: all 0.3s ease;
 }
 
 .btn.active {
@@ -278,8 +268,6 @@
   }
 }
 
-
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -293,7 +281,323 @@ textarea:-webkit-autofill {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+@include respond(desktop) {
+  .contact {
+    padding: 48px;
+    padding-top: 128px;
+  }
+
+  .contact__container {
+    padding: 0;
+  }
+
+  .contact__subtitle {
+    font-size: 24px;
+  }
+
+  .contact__title {
+    font-size: 56px;
+  }
+
+  .contact__question {
+    font-size: 24px;
+  }
+
+  .contact__text {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  .contact__right {
+    padding: 0;
+  }
+
+  .contact__form {
+    gap: 20px;
+  }
+
+  .form__group label {
+    font-size: 24px;
+  }
+
+  .form__group {
+    padding: 28px 12px;
+  }
+
+  .form__group input {
+    font-size: 20px;
+  }
+
+  .form__group textarea {
+    font-size: 20px;
+  }
+
+  .form__checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .form__checkbox .checkmark::after {
+    top: 0;
+    left: 5px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+
+@include respond(tablet) {
+  .contact {
+    padding: 34px;
+  }
+
+  .contact__container {
+    padding: 0;
+  }
+
+  .contact__subtitle {
+    font-size: 24px;
+  }
+
+  .contact__title {
+    font-size: 56px;
+  }
+
+  .contact__question {
+    font-size: 24px;
+  }
+
+  .contact__text {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  .contact__right {
+    padding: 0;
+  }
+
+  .contact__form {
+    gap: 20px;
+  }
+
+  .form__group label {
+    font-size: 24px;
+  }
+
+  .form__group {
+    padding: 28px 12px;
+  }
+
+  .form__group input {
+    font-size: 20px;
+  }
+
+  .form__group textarea {
+    font-size: 20px;
+  }
+
+  .form__checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .form__checkbox .checkmark::after {
+    top: 0;
+    left: 5px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@include respond(mobile-lg) {
+  .contact {
+    padding: 24px;
+  }
+
+  .contact__container {
+    padding: 0;
+  }
+
+  .contact__subtitle {
+    font-size: 24px;
+  }
+
+  .contact__title {
+    font-size: 56px;
+  }
+
+  .contact__question {
+    font-size: 24px;
+  }
+
+  .contact__text {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  .contact__right {
+    padding: 0;
+  }
+
+  .contact__form {
+    gap: 20px;
+  }
+
+  .form__group label {
+    font-size: 24px;
+  }
+
+  .form__group {
+    padding: 28px 12px;
+  }
+
+  .form__group input {
+    font-size: 20px;
+  }
+
+  .form__group textarea {
+    font-size: 20px;
+  }
+
+  .form__checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .form__checkbox .checkmark::after {
+    top: 0;
+    left: 5px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@include respond(mobile-max) {
+  .contact {
+    padding: 16px
+  }
+
+  .contact__container {
+    padding: 0;
+  }
+
+  .contact__subtitle {
+    font-size: 18px;
+  }
+
+  .contact__title {
+    font-size: 56px;
+  }
+
+  .contact__question {
+    font-size: 20px;
+  }
+
+  .contact__text {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  .contact__right {
+    padding: 0;
+  }
+
+  .contact__form {
+    gap: 20px;
+  }
+
+  .form__group label {
+    font-size: 20px;
+  }
+
+  .form__group {
+    padding: 22px 12px;
+  }
+
+  .form__group input {
+    font-size: 16px;
+  }
+
+  .form__group textarea {
+    font-size: 16px;
+  }
+
+  .form__checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .form__checkbox .checkmark::after {
+    top: 0;
+    left: 5px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+}
 
 @include respond(mobile) {
-  
+  .contact {
+    padding: 8px;
+  }
+
+  .contact__container {
+    padding: 0;
+  }
+
+  .contact__subtitle {
+    font-size: 16px;
+  }
+
+  .contact__title {
+    font-size: 48px;
+  }
+
+  .contact__question {
+    font-size: 18px;
+  }
+
+  .contact__text {
+    font-size: 14px;
+  }
+
+  .contact__right {
+    padding: 0;
+  }
+
+  .contact__form {
+    gap: 20px;
+  }
+
+  .form__group label {
+    font-size: 18px;
+  }
+
+  .form__group {
+    padding: 16px 12px;
+  }
+
+  .form__group input {
+    font-size: 14px;
+  }
+
+  .form__group textarea {
+    font-size: 14px;
+  }
+
+  .form__checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .form__checkbox .checkmark::after {
+    top: 0;
+    left: 5px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
 }

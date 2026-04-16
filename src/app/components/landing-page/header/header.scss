@@ -4,73 +4,72 @@
 @use '../../../../styles/abstracts/mixins' as *;
 @use '../../../../styles/abstracts/breakpoints' as *;
 
-
 header {
-     background-image: url(..//..//..//..//..//public/images/hero/bg-hero.png);
-     background-size: cover;
+  background-image: url(..//..//..//..//..//public/images/hero/bg-hero.png);
+  background-size: cover;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+  padding: 32px 64px;
 }
 
-.header__nav{
-    @include flex-center;
-    gap: 40px;
+.header__nav {
+  @include flex-center;
+  gap: 40px;
 }
 
 .header__nav a {
-position: relative;
-font-family: $font-code;
-text-decoration: none;
-color: white;
-transition: color 0.25s ease;
-font-size: 20px;
+  position: relative;
+  font-family: $font-code;
+  text-decoration: none;
+  color: white;
+  transition: color 0.25s ease;
+  font-size: 20px;
 }
 
-.header__nav a.active{
-    color: $primary-color;
+.header__nav a.active {
+  color: $primary-color;
 }
 
 .header__nav a::after {
-content: "";
-position: absolute;
-left: 50%;
-bottom: -10px;
-transform: translateX(-50%) scale(0);
-width: 6px;
-height: 6px;
-background-color: $primary-color;
-border-radius: 50%;
-transition: color 0.25s ease;
-opacity: 0;
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%) scale(0);
+  width: 6px;
+  height: 6px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  transition: color 0.25s ease;
+  opacity: 0;
 }
 
 .header__nav a:hover::after,
 .header__nav a.active::after {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
 }
 
 .lang-switch {
-    display: flex;
-    border: 2px solid $primary-color;
-    border-radius: 30px;
-    overflow: hidden;
-    width: fit-content;  
+  display: flex;
+  border: 2px solid $primary-color;
+  border-radius: 30px;
+  overflow: hidden;
+  width: fit-content;
 }
 
 .lang-switch:hover {
-    border-color: white
+  border-color: white;
 }
 
 .lang-switch span {
-   padding: 6px 16px;
-   cursor: pointer;
-   color: $primary-color;
-   transition: all 0.3s ease;
+  padding: 6px 16px;
+  cursor: pointer;
+  color: $primary-color;
+  transition: all 0.3s ease;
 }
 
 .lang-switch span:hover {
@@ -78,63 +77,199 @@ opacity: 0;
 }
 
 .lang-switch .active {
-    background-color: $primary-color;
-    color: #fff;
-    border-radius: 30px;
-    transition: all 0.2s ease;
+  background-color: $primary-color;
+  color: #fff;
+  border-radius: 30px;
+  transition: all 0.2s ease;
 }
 
+.burger {
+  display: none;
+}
 
+@include respond(mobile-lg) {
+  .burger {
+    position: absolute;
+    top: 20px;
+    right: 24px; // ✅ statt left
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
 
-// .burger {
-//   position: absolute;
-//   top: 20px;
-//   right: 20px; // ✅ statt left
-//   z-index: 1000;
+    span {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
 
-//   display: flex;
-//   flex-direction: column;
-//   gap: 5px;
-//   background: none;
-//   border: none;
-//   cursor: pointer;
+    &.active span {
+      background: $primary-color;
+    }
+  }
 
-//   display: none;
+  .header__nav {
+    position: fixed;
+    top: 23%;
+    left: 69%;
+    transform: translate(-50%, -50%) scale(0.8);
 
-//   span {
-//     width: 25px;
-//     height: 3px;
-//     background: white;
-//   }
-// }
+    width: 55%;
+    max-width: 180px;
+    padding: 32px;
 
-// .header__nav {
-//   position: fixed;
-//   top: 0;
-//   right: -100%; // ❗ versteckt
-//   width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
 
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 2rem;
+    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
 
-//   background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
-//   border-radius: 0 30px 30px 0;
+    border-radius: 30px;
+    border: 1px solid $primary-color;
 
-//   transition: 0.4s ease;
-//   z-index: 999;
+    opacity: 0;
+    pointer-events: none;
 
-//   &.open {
-//     left: 0;
-//   }
-// }
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .header__nav.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header__nav a {
+    font-size: 24px;
+  }
+
+  .lang-switch span {
+    padding: 16px 24px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+@include respond(mobile-max) {
+  .burger {
+    position: absolute;
+    top: 20px;
+    right: 20px; // ✅ statt left
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    &.active span {
+      background: $primary-color;
+    }
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 21%;
+    left: 67%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    width: 55%;
+    max-width: 320px;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+
+    border-radius: 30px;
+    border: 1px solid $primary-color;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .header__nav.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header__nav a {
+    font-size: 18px;
+  }
+}
 
 @include respond(mobile) {
-    .nav-links {
-        display: none;
+  .burger {
+    position: absolute;
+    top: 20px;
+    right: 20px; // ✅ statt left
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: white;
     }
+
+    &.active span {
+      background: $primary-color;
+    }
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 21%;
+    left: 60%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    width: 65%;
+    max-width: 320px;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+
+    border-radius: 30px;
+    border: 1px solid $primary-color;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .header__nav.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
-
-

@@ -4,49 +4,48 @@
 @use '../../../../styles/abstracts/mixins' as *;
 @use '../../../../styles/abstracts/breakpoints' as *;
 
-
 .hero {
-    background-image: url(/images/hero/bg-hero.png) ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    
-    height: 100vh;
+  background-image: url('../../../../../public/images/hero/bg-hero.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-    position: relative;
-    overflow: hidden;
+  height: 100vh;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .hero__content {
-    position: relative;
-    @include flex-center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 180px;
-    z-index: 2;
+  position: relative;
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 150px;
+  z-index: 2;
 }
 
 .hero__content p {
-    font-size: 40px;
-    font-weight: 400;
-    font-family: $font-code;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: $font-code;
 }
 
 .hero__content h1 {
-    font-size: 128px;
-    font-weight: 700;
-    font-family: $font-main;
+  font-size: 128px;
+  font-weight: 700;
+  font-family: $font-main;
 }
 
 .side {
   position: absolute;
   left: 64px;
-  top: 70%; 
+  top: 70%;
   z-index: 1;
 }
 
 .scroll-indicator {
-    @include flex-center;
+  @include flex-center;
   flex-direction: column;
 }
 
@@ -56,7 +55,7 @@
   height: 48px;
   border: 2px solid $primary-color;
   border-radius: $btn-radius;
- @include flex-center;
+  @include flex-center;
   color: white;
   font-size: 18px;
   margin-bottom: 10px;
@@ -89,21 +88,18 @@
   width: 2px;
   z-index: 1;
   height: 186px;
-  background: linear-gradient(
-    to bottom,
-    $primary-color,   
-  );
+  background: linear-gradient(to bottom, $primary-color);
 }
 
 .side--right {
   position: absolute;
-    right: 64px;
-    top: 39%;
-    @include flex-center;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
-    z-index: 1;
+  right: 64px;
+  top: 37%;
+  @include flex-center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  z-index: 1;
 }
 
 /* Email vertikal */
@@ -121,9 +117,9 @@
 
 /* Icons */
 .side__socials {
-    @include flex-center;
+  @include flex-center;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .side__socials a {
@@ -132,6 +128,10 @@
   align-items: center;
 }
 
+// .email__side-icon {
+//   display: none;
+// }
+
 .side__socials img {
   width: 32px;
   height: 32px;
@@ -139,125 +139,317 @@
 }
 
 .side__socials a:hover img {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .side__socials a::before {
-    content: "";
-    position: absolute;
+  content: '';
+  position: absolute;
 
-    top: 50%;
-    transform: translateY(-50%) scale(0.5);
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
 
+  right: -14px;
+  width: 6px;
+  height: 6px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  opacity: 0;
 
-    right: -14px;
-    width: 6px;
-    height: 6px;
-    background-color: $primary-color;
-    border-radius: 50%;
-    opacity: 0;
-    
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .side__socials a:hover::before {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
-    right: -14px; /* kleiner Slide */
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  right: -14px; /* kleiner Slide */
 }
 
 /* Linie */
 .right__line {
   width: 2px;
   height: 160px;
-  background: linear-gradient(
-    to bottom,
-    white,
-  );
+  background: linear-gradient(to bottom, white);
 }
 
 .marquee {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    height: 56px;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(3px);
-    transform: rotate(-3deg);
-    @include flex-center;
-    // display: flex;
-    // align-items: center;
-    z-index: 1;
-    }
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  transform: rotate(-3deg);
+  @include flex-center;
+  z-index: 1;
+}
 
 .marquee__track {
-    display: flex;
-    width: max-content;
-    animation: marquee 25s linear infinite;
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
 }
 
 .marquee span {
-    white-space: nowrap;
-    padding-right: 50px;
-    font-size: 32px;
-    color: $primary-color;
-    font-family: $font-main; 
+  white-space: nowrap;
+  padding-right: 50px;
+  font-size: 32px;
+  color: $primary-color;
+  font-family: $font-main;
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+@include respond(large) {
+  .email__side-icon {
+   display: none;
+  }
+   .side--right {
+    right: 48px;
+    top: 41%;
+  }
+
+}
+
+@include respond(desktop-m) {
+  .hero__content {
+    margin-top: 160px;
+  }
+
+  .hero__content p {
+    font-size: 36px;
+  }
+
+  .hero__content h1 {
+    font-size: 96px;
+  }
+
+  .email__side-icon {
+   display: none;
+  }
+
+  .side--left {
+    left: 48px;
+  }
+
+  .side--right {
+    right: 48px;
+    top: 41%;
+  }
+}
+
+@include respond(desktop) {
+  .hero__content {
+    margin-top: 160px;
+  }
+
+  .hero__content p {
+    font-size: 36px;
+  }
+
+  .hero__content h1 {
+    font-size: 96px;
+  }
+
+  .email__side-icon {
+   display: none;
+  }
+
+  .side--left {
+    left: 48px;
+  }
+
+  .side--right {
+    right: 48px;
+    top: 41%;
+  }
+}
+
+@include respond(tablet) {
+  .hero__content {
+    margin-top: 160px;
+  }
+
+  .hero__content p {
+    font-size: 36px;
+  }
+
+  .hero__content h1 {
+    font-size: 96px;
+  }
+
+  .side__email {
+    display: none;
+  }
+
+  .email__side-icon{
+    display: block;
+  }
+
+  .side--left {
+    left: 32px;
+  }
+
+  .side--right {
+    right: 32px;
+    top: 66%;
+  }
+}
+
+@include respond(mobile-lg) {
+  .hero__content {
+    margin-top: 180px;
+    padding: 24px;
+  }
+
+  .hero__content p {
+    font-size: 26px;
+  }
+
+  .hero__content h1 {
+    font-size: 64px;
+  }
+
+  .hero__buttons {
+    gap: 48px;
+  }
+
+  .btn {
+    padding: 12px 14px;
+  }
+
+  .marquee span {
+    font-size: 24px;
+  }
+
+  .side--right {
+    right: 24px;
+    top: 68%;
+  }
+
+  .right__line {
+    height: 144px;
+  }
+
+  .side--left {
+    top: 60%;
+    left: 24px;
+  }
+
+  .left__line {
+    height: 270px;
+  }
+
+  .marquee {
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
+
+@include respond(mobile-max) {
+  .hero__content {
+    margin-top: 160px;
+    padding: 0 16px 0 16px;
+  }
+
+  .hero__content p {
+    font-size: 24px;
+  }
+
+  .hero__content h1 {
+    font-size: 62px;
+  }
+
+  .hero__buttons {
+    gap: 16px;
+  }
+
+  .btn {
+    padding: 12px 14px;
+  }
+
+  .marquee span {
+    font-size: 24px;
+  }
+
+  .side--right {
+    right: 24px;
+    top: 70%;
+  }
+
+  .right__line {
+    height: 130px;
+  }
+
+  .side--left {
+    top: 60%;
+    left: 24px;
+  }
+
+  .left__line {
+    height: 270px;
+  }
+
+  .marquee {
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
 
 @include respond(mobile) {
-    .hero__content p {
-        font-size: 24px;
-    }
-
-    .hero__content h1 {
-        font-size: 62px;
-    }
-
-    .hero__buttons {
-        gap: 10px;
-        
-    }
-
-    .btn {
-      padding: 12px 14px;
-      
-    }
-
-    .marquee span {
-        font-size: 24px;
-    }
-
-    .side__email {
-        display: none;
-
-    }
-
-    .side--right {
-      right: 24px;
-      top: 68%;
-    }
-
-    .right__line {
-      height: 119px;
-    }
-
-    .side--left {
-      top: 60%;
-      left: 24px;
-    }
-
-    .left__line {
-      height: 270px;
-     }
+  .hero__content {
+    margin-top: 180px;
+    padding: 0 8px 0 8px;
   }
+
+  .hero__content p {
+    font-size: 24px;
+  }
+
+  .hero__content h1 {
+    font-size: 62px;
+  }
+
+  .hero__buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 12px 14px;
+  }
+
+  .marquee span {
+    font-size: 24px;
+  }
+
+  .side--right {
+    right: 18px;
+    top: 71%;
+  }
+
+  .right__line {
+    height: 119px;
+  }
+
+  .side--left {
+    top: 60%;
+    left: 18px;
+  }
+
+  .left__line {
+    height: 270px;
+  }
+
+  .marquee {
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
