@@ -3,20 +3,19 @@
 
     <!-- LEFT SIDE -->
     <div class="contact__left">
-      <p class="contact__subtitle">Contact me</p>
-      <h2 class="contact__title">Let's work together</h2>
+      <p class="contact__subtitle">{{ 'CONTACT.SUBTITLE' | translate }}</p>
+      <h2 class="contact__title">{{ 'CONTACT.TITLE' | translate }}</h2>
 
       <div class="contact__description">
-        <p class="contact__question">Got a problem to solve?</p>
+        <p class="contact__question">{{ 'CONTACT.QUESTION' | translate }}</p>
 
         <p class="contact__text">
-          Encourage people to contact you and describe what role you are interested in.
-          Show that you will add value to their projects through your work.
+          {{ 'CONTACT.TEXT' | translate }}
         </p>
 
         <p class="contact__cta">
-          Need a Fullstack developer?
-          <span>Let’s talk!</span>
+          {{ 'CONTACT.CTA' | translate }}
+          <span>{{ 'CONTACT.CTA_HIGHLIGHT' | translate }}</span>
         </p>
       </div>
     </div>
@@ -27,26 +26,26 @@
 
         <!-- NAME -->
         <div class="form__group">
-          <label for="name">What's your name?</label>
-          <input type="text" id="name" [(ngModel)]="name" name="name" [placeholder]="isNameInvalid() ? '' : 'Your name goes here'">
+          <label for="name">{{ 'CONTACT.FORM.NAME_LABEL' | translate }}</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" [placeholder]="isNameInvalid() ? '' : ('CONTACT.FORM.NAME_PLACEHOLDER' | translate)">
           <span class="form__error" *ngIf="isNameInvalid()">
-            Oops! it seems your name is missing
+            {{ 'CONTACT.ERRORS.NAME' | translate }}
         </span>
         </div>
 
         <!-- EMAIL -->
         <div class="form__group">
-          <label for="email">What's your email?</label>
-          <input type="email" id="email" [(ngModel)]="email" name="email" [placeholder]="isEmailInvalid() ? '' : 'youremail@email.com'">
-          <span class="form__error" *ngIf="isEmailInvalid()">Hoppla! your email is required</span>
+          <label for="email">{{ 'CONTACT.FORM.EMAIL_LABEL' | translate }}</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" [placeholder]="isEmailInvalid() ? '' : ('CONTACT.FORM.EMAIL_PLACEHOLDER' | translate)">
+          <span class="form__error" *ngIf="isEmailInvalid()">{{ 'CONTACT.ERRORS.EMAIL' | translate }}</span>
         </div>
 
         <!-- MESSAGE -->
         <div class="form__group">
-          <label for="message">How can I help you?</label>
+          <label for="message">{{ 'CONTACT.FORM.MESSAGE_LABEL' | translate }}</label>
           <textarea id="message" [(ngModel)]="message" name="message" rows="3" 
-                    [placeholder]="isMessageInvalid() ? '' : 'Hello Temirlan, I am interested in...'"></textarea>
-          <span class="form__error" *ngIf="isMessageInvalid()">What do you need to Develop?</span>
+                    [placeholder]="isMessageInvalid() ? '' : ('CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate)"></textarea>
+          <span class="form__error" *ngIf="isMessageInvalid()">{{ 'CONTACT.ERRORS.MESSAGE' | translate }}</span>
         </div>
 
         <!-- CHECKBOX -->
@@ -59,21 +58,21 @@
             <span class="checkmark"></span>
 
             <span class="text">
-              I've read the <span class="link">privacy policy</span>
-              and agree to the processing of my data as outlined.
+              {{ 'CONTACT.FORM.PRIVACY_1' | translate }} <span class="link">{{ 'CONTACT.FORM.PRIVACY_LINK' | translate }}</span>
+              {{ 'CONTACT.FORM.PRIVACY_2' | translate }}
             </span>
           </label>
 
           <!-- ERROR (separat!) -->
           <span class="form__error form__error--checkbox" *ngIf="isCheckboxInvalid()">
-            Please accept the privacy policy.
+            {{ 'CONTACT.ERRORS.PRIVACY' | translate }}
           </span>
 
         </div>
 
         <!-- BUTTON -->
         <button type="submit" class="btn" [class.active]="isFormValid()">
-          <span>Say Hello ;)</span>
+          <span>{{ 'CONTACT.FORM.BUTTON' | translate }}</span>
         </button>
 
       </form>

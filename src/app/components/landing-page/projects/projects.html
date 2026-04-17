@@ -1,11 +1,11 @@
 <section class="portfolio">
   <div class="container">
-    <p class="subtitle">Portfolio</p>
+    <p class="subtitle">{{ 'PORTFOLIO.SUBTITLE' | translate }}</p>
 
-    <h2 class="title">Featured Projects</h2>
+    <h2 class="title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
 
     <p class="description">
-      Explore a selection of my work here - Interact with projects to see my skills in acction
+      {{ 'PORTFOLIO.DESCRIPTION' | translate }}
     </p>
 
     <div class="projects">
@@ -40,10 +40,10 @@
 
       <h2>{{ selectedProject.name }}</h2>
 
-      <p class="modal-title">What is this project about?</p>
+      <p class="modal-title">{{ 'PORTFOLIO.MODAL.ABOUT' | translate }}</p>
 
       <p>
-        {{ selectedProject.description }}
+        {{ selectedProject.description | translate }}
       </p>
 
       <div class="modal-tech">
@@ -58,11 +58,11 @@
 
       <div class="modal-buttons">
         <a href="https://github.com/TemirlanGashimov/EL_POLLO_LOCO" target="_blank">
-            GitHub <span class="arrow"> ↗ </span>
+            {{ 'PORTFOLIO.MODAL.GITHUB' | translate }} <span class="arrow"> ↗ </span>
         </a>
 
         <a href="#" target="_blank">
-            Live Test <span class="arrow"> ↗ </span>
+            {{ 'PORTFOLIO.MODAL.LIVE' | translate }} <span class="arrow"> ↗ </span>
         </a>
       </div>
     </div>
@@ -73,7 +73,7 @@
     </div>
 
     <button class="next-project" (click)="nextProject()" [disabled]="activeProjects.length <= 1">
-        <span class="text">Next project</span>
+        <span class="text">{{ 'PORTFOLIO.MODAL.NEXT' | translate }}</span>
         <span class="arrow">→</span>
     </button>
   </div>

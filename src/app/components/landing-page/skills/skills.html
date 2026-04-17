@@ -1,66 +1,54 @@
 <section class="skills">
   <div class="skills__container">
     <div class="skills__content">
-    <p class="skills__subtitle">Technologies</p>
+      <p class="skills__subtitle">{{ 'SKILLS_SECTION.SUBTITLE' | translate }}</p>
 
-    <div class="skills__card">
-      <h2 class="skills__title">Skill Set</h2>
+      <div class="skills__card">
+        <h2 class="skills__title">{{ 'SKILLS_SECTION.TITLE' | translate }}</h2>
 
-      <p class="skills__text">
-        A short introduction of your skills. Highlight your experience of using different front-end
-        technologies and emphasise your openness to learning and adapting to new technologies. Show
-        how important it is for you to keep up with the rapid changes in web development.
-      </p>
+        <p class="skills__text">
+          {{ 'SKILLS_SECTION.TEXT' | translate }}
+        </p>
 
-      <h3 class="skills__heading">
-       You need <span class="skills__highlight">another skill?</span>
-      </h3>
-      <p class="skills__description">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+        <h3 class="skills__heading">
+          {{ 'SKILLS_SECTION.QUESTION' | translate }} <span class="skills__highlight">another skill?</span>
+        </h3>
+        <p class="skills__description">
+          {{ 'SKILLS_SECTION.DESCRIPTION' | translate }}
+        </p>
 
-      <a href="#" class="btn"><span>Let's Talk</span></a>
+        <a href="#" class="btn"><span>{{ 'SKILLS_SECTION.BUTTON' | translate }}</span></a>
+      </div>
     </div>
-  </div>
 
     <div class="skills__grid">
-
       @for (skill of skills; track skill.name) {
-
         @if (skill.active) {
-
           <div class="skills__item">
-
-            <img [src]="'icons/' + skill.icon" [alt]="skill.name + ' logo'">
+            <img [src]="'icons/' + skill.icon" [alt]="skill.name + ' logo'" />
             <p class="skills__label">{{ skill.name }}</p>
 
             @if (skill.tooltip) {
               <div class="skills__tooltip">
-                <p class="skills__tooltip-text">
-                  I have a special interest in learning
-                </p>
+                <p class="skills__tooltip-text">{{ 'SKILLS_SECTION.TOOLTIP' | translate }}</p>
 
                 <div class="skills__tooltip-icons">
-
                   <div>
-                    <img src="icons/react.svg" alt="React">
+                    <img src="icons/react.svg" alt="React" />
                     <p>React</p>
                   </div>
 
                   <div>
-                    <img src="icons/vue.svg" alt="Vue">
+                    <img src="icons/vue.svg" alt="Vue" />
                     <p>Vue.js</p>
                   </div>
                 </div>
               </div>
             }
-
           </div>
         }
       }
-
     </div>
-
-
-
   </div>
   <!-- </div> -->
 </section>
