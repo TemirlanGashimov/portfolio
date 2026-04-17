@@ -1,34 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
 
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+
   activeSection: string = '';
-  
+  menuOpen = false;
+
+  currentLanguage: 'en' | 'de' = 'en';
+
+  constructor(){
+    const savedLang = localStorage.getItem('lang') as 'en' | 'de';
+
+    if (savedLang) {
+      this.currentLanguage = savedLang;
+      this.translate.use(savedLang);
+    } else {
+      this.translate.use('en');
+    }
+  }
+
+  setLanguage(lang: 'en' | 'de'){
+    this.currentLanguage = lang;
+    this.translate.use(lang);
+
+    localStorage.setItem('lang', lang);
+  }
+
+   toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
   setActive(section: string) {
     this.activeSection = section;
   }
 
-  currentLanguage: 'EN' | 'DE' = 'EN';
-
-  setLanguage(lang: 'EN' | 'DE') {
-    this.currentLanguage = lang;
-  }
-
-  menuOpen = false;
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-  
   scrollTo(section: string) {
     this.activeSection = section;
+
     const element = document.getElementById(section);
-    element?.scrollIntoView({ behavior: 'smooth' });
+
+    if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+} else {
+  this.router.navigate(['/'],  {fragment: section})
 }
+  }
 }

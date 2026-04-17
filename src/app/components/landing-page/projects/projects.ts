@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 interface Project {
   name: string;
@@ -15,7 +16,7 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   standalone: true,
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
@@ -42,7 +43,7 @@ export class Projects {
       image: 'images/projects/join.png',
       modalImage: 'images/projects/join_dialog.png',
       active: true,
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+      description: 'PROJECTS-MODAL.JOIN.DESCRIPTION',
       github: '',
       live: ''
       
@@ -53,7 +54,7 @@ export class Projects {
       image: 'images/projects/el_pollo_loco.png',
       modalImage: 'images/projects/el_pollo_loco_dialog.png',
       active: true,
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      description: 'PROJECTS-MODAL.POLLO.DESCRIPTION',
       github: '',
       live: ''
 
@@ -64,7 +65,7 @@ export class Projects {
       image: 'images/projects/dabubble.png',
       modalImage: 'images/projects/dabubble_dialog.png',
       active: true,
-      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+      description: 'PROJECTS-MODAL.DABUBBLE.DESCRIPTION',
       github: '',
       live: ''
     }
