@@ -1,0 +1,148 @@
+{
+  "ABOUT": "Über mich",
+  "SKILLS": "Fähigkeiten",
+  "PROJECTS": "Projekte",
+
+  "HERO": {
+    "ROLE": "Fullstack Entwickler",
+    "CTA_WORK": "Meine Projekte",
+    "CTA_CONTACT": "Kontakt"
+  },
+  "MARQUEE": {
+    "ROLE": "Fullstack Entwickler",
+    "LOCATION": "Wohnhaft in Hagen",
+    "STATUS": "Offen für Jobs",
+    "REMOTE": "Verfügbar für Remote-Arbeit"
+  },
+
+  "ABOUT_SECTION": {
+    "SUBTITLE": "Wer ich bin",
+    "TITLE": "Über mich",
+
+    "TEXT": "Mein Name ist Temirlan und ich komme aus Russland, aus der Republik Dagestan. Ich lebe seit 2010 in Europa. Von 2010 bis 2016 habe ich in Österreich gelebt, und 2016 ist meine Familie mit mir nach Deutschland gezogen. Seitdem lebe ich in der Stadt Hagen. Ich habe mich schon immer für den IT-Bereich interessiert. Bereits in meiner Schulzeit war es mein Traum, in der IT zu arbeiten. Aufgrund häufiger Umzüge – zuerst nach Österreich und später nach Deutschland – konnte ich diesen Traum damals jedoch nicht verfolgen. Nach meiner Ausbildung bei der Developer Academy habe ich erkannt, dass es nicht zu spät ist und ich immer noch eine Chance habe. Alles rund um das Programmieren macht mir große Freude. Ich lerne gerne, und der Prozess selbst motiviert mich sehr. Was mich am meisten inspiriert, ist die Tatsache, dass ich etwas Neues erschaffen kann, indem ich Code schreibe, der für viele Menschen zunächst unverständlich erscheint. Genau das macht Programmieren für mich so spannend und bedeutungsvoll.",
+
+    "FEATURE_1": "Ich lebe derzeit in Hagen, Deutschland. Ich bin offen für Remote-Arbeit und auch bereit, umzuziehen, sogar in ein anderes Land.",
+
+    "FEATURE_2": "Ich lerne gerne neue Dinge und verbessere meine Fähigkeiten stetig. Ich lerne durch Kurse, Praxis und die Arbeit an Projekten. Am Anfang kann es schwierig sein, aber mit Zeit, Fokus und Engagement gelingt es mir, Fortschritte zu machen. Dieser Prozess motiviert mich, weiter zu wachsen und besser zu werden.",
+
+    "FEATURE_3": "Wenn ich auf ein Problem stoße, analysiere ich es zunächst und versuche zu verstehen, was nicht funktioniert. Es klappt nicht immer beim ersten Versuch, aber ich bleibe dran. Ich probiere verschiedene Lösungen aus und gebe nicht auf, auch wenn es schwierig wird. Außerdem recherchiere ich online und frage Kollegen, wenn nötig. Ich bin überzeugt, dass Fehler Teil des Lernprozesses sind und ich daraus wachse. Was mich am Programmieren begeistert, ist die Möglichkeit, etwas von Grund auf neu zu erschaffen und echte Ergebnisse zu sehen."
+  },
+
+  "SKILLS_SECTION": {
+    "SUBTITLE": "Technologien",
+    "TITLE": "Fähigkeiten",
+
+    "TEXT": "Ich habe Erfahrung mit Frontend-Technologien wie HTML, CSS, JavaScript, TypeScript, SCSS und Angular. Außerdem nutze ich GitHub für Versionskontrolle und Projektmanagement. Ich bin sehr motiviert, weiter zu lernen und meine Fähigkeiten auszubauen. In Zukunft möchte ich weitere Programmiersprachen lernen und mein Wissen im Backend-Bereich vertiefen. Ich verstehe, dass sich Webentwicklung ständig weiterentwickelt, und halte es für sehr wichtig, mit neuen Technologien und Trends Schritt zu halten. Deshalb bin ich immer offen dafür, Neues zu lernen und mich weiterzuentwickeln.",
+
+    "QUESTION": "Benötigen Sie eine weitere Fähigkeit?",
+    "DESCRIPTION": "Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
+    "BUTTON": "Kontakt aufnehmen",
+
+    "TOOLTIP": "Ich habe ein besonderes Interesse daran, zu lernen"
+  },
+
+  "PORTFOLIO": {
+    "SUBTITLE": "Portfolio",
+    "TITLE": "Ausgewählte Projekte",
+    "DESCRIPTION": "Entdecken Sie hier eine Auswahl meiner Projekte – interagieren Sie mit ihnen, um meine Fähigkeiten zu sehen",
+
+    "MODAL": {
+      "ABOUT": "Worum geht es in diesem Projekt?",
+      "GITHUB": "GitHub",
+      "LIVE": "Live Demo",
+      "NEXT": "Nächstes Projekt"
+    }
+  },
+
+  "PROJECTS-MODAL": {
+    "JOIN": {
+      "DESCRIPTION": "Task-Manager basierend auf dem Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop, weise Benutzer und Kategorien zu."
+    },
+    "POLLO": {
+      "DESCRIPTION": "Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco zu sammeln, um gegen die verrückte Henne zu kämpfen."
+    },
+    "DABUBBLE": {
+      "DESCRIPTION": "Diese App ist ein Slack-Klon. Sie verbessert die Teamkommunikation durch eine intuitive Oberfläche, Echtzeit-Nachrichten und strukturierte Kanäle."
+    }
+  },
+
+  "CONTACT": {
+    "SUBTITLE": "Kontakt",
+    "TITLE": "Lass uns zusammenarbeiten",
+
+    "QUESTION": "Hast du ein Problem zu lösen?",
+    "TEXT": "Ermutige Besucher, dich zu kontaktieren und zu beschreiben, welche Rolle sie suchen. Zeige, dass du mit deiner Arbeit Mehrwert bringst.",
+    "CTA": "Brauchst du einen Fullstack Entwickler?",
+    "CTA_HIGHLIGHT": "Lass uns sprechen!",
+
+    "FORM": {
+      "NAME_LABEL": "Wie heißt du?",
+      "NAME_PLACEHOLDER": "Dein Name hier",
+
+      "EMAIL_LABEL": "Was ist deine E-Mail?",
+      "EMAIL_PLACEHOLDER": "deine@email.com",
+
+      "MESSAGE_LABEL": "Wie kann ich dir helfen?",
+      "MESSAGE_PLACEHOLDER": "Hallo Temirlan, ich interessiere mich für...",
+
+      "PRIVACY_1": "Ich habe die",
+      "PRIVACY_LINK": "Datenschutzerklärung",
+      "PRIVACY_2": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+
+      "BUTTON": "Nachricht senden"
+    },
+
+    "ERRORS": {
+      "NAME": "Ups! Dein Name fehlt",
+      "EMAIL": "Ups! Deine E-Mail ist erforderlich",
+      "MESSAGE": "Was möchtest du entwickeln?",
+      "PRIVACY": "Bitte akzeptiere die Datenschutzbestimmungen."
+    }
+  },
+
+  "FOOTER": {
+    "ROLE": "Fullstack Entwickler",
+    "LOCATION": "Hagen, Deutschland",
+
+    "LINKS": {
+      "LEGAL": "Impressum",
+      "EMAIL": "E-Mail",
+      "GITHUB": "GitHub",
+      "LINKEDIN": "LinkedIn"
+    },
+
+    "COPYRIGHT": "© Temirlan Gashimov 2026"
+  },
+
+  "LEGAL": {
+    "TITLE": "Impressum",
+
+    "IMPRINT_TITLE": "Angaben gemäß § 5 TMG",
+    "NAME": "Temiran Gashimov",
+    "ADDRESS_1": "Augustastraße 16",
+    "ADDRESS_2": "58089 Hagen",
+
+    "CONTACT_TITLE": "Kontakt",
+    "EMAIL": "E-Mail: Gahsimov.temerlan@gmail.com",
+
+    "TERMS_TITLE": "Nutzungsbedingungen",
+    "TERMS_TEXT": "Durch die Nutzung dieses Portfolios stimmen Sie den folgenden Bedingungen zu.",
+
+    "SCOPE_TITLE": "Geltungsbereich und Eigentum",
+    "SCOPE_TEXT": "Dieses Portfolio wurde im Rahmen eines Ausbildungsprojekts bei der Developer Akademie erstellt.",
+
+    "RIGHTS_TITLE": "Urheberrechte",
+    "RIGHTS_TEXT": "Alle Rechte an diesem Portfolio bleiben vorbehalten.",
+
+    "USE_TITLE": "Nutzung",
+    "USE_TEXT": "Dieses Portfolio darf nur für legale Zwecke verwendet werden.",
+
+    "DISCLAIMER_TITLE": "Haftungsausschluss",
+    "DISCLAIMER_TEXT": "Dieses Portfolio wird ohne Gewähr bereitgestellt.",
+
+    "INDEMNITY_TITLE": "Haftungsfreistellung",
+    "INDEMNITY_TEXT": "Sie erklären sich bereit, alle beteiligten Parteien schadlos zu halten.",
+
+    "DATE": "Datum: 13. April 2026"
+  }
+}
