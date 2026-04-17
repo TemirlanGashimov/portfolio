@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Hero } from './hero/hero';
 import { About } from './about/about';
 import { Skills } from './skills/skills';
 import { Projects } from './projects/projects';
 import { ContactMe } from './contact-me/contact-me';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -14,4 +15,18 @@ import { ContactMe } from './contact-me/contact-me';
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.scss',
 })
-export class LandingPage {}
+export class LandingPage implements AfterViewInit{
+
+  constructor(private route: ActivatedRoute) {}
+    ngAfterViewInit() {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          setTimeout(() =>{
+            const element = document.getElementById(fragment);
+            element?.scrollIntoView({ behavior: 'smooth'});
+          }, 100);
+        }
+      });
+    }
+  }
+
