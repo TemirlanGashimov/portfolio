@@ -1,0 +1,149 @@
+{
+  "ABOUT": "About me",
+  "SKILLS": "Skills",
+  "PROJECTS": "Projects",
+
+  "HERO": {
+    "ROLE": "Fullstack Developer",
+    "CTA_WORK": "Check my Work",
+    "CTA_CONTACT": "Contact me"
+  },
+
+  "MARQUEE": {
+    "ROLE": "Fullstack Developer",
+    "LOCATION": "Based in Hagen",
+    "STATUS": "Open to work",
+    "REMOTE": "Available for remote work"
+  },
+
+  "ABOUT_SECTION": {
+    "SUBTITLE": "Who I Am",
+    "TITLE": "About me",
+
+    "TEXT": "My name is Temirlan, and I come from Russia, from the Republic of Dagestan. I have been living in Europe since 2010. From 2010 to 2016, I lived in Austria, and in 2016 my family and I moved to Germany. Since then, I have been living in the city of Hagen. I have always been interested in the IT field. Back in my school years, it was my dream to work in IT. However, due to frequent relocations—first to Austria and then to Germany—I was not able to pursue this dream at that time. After studying at Developer Academy, I realized that it is not too late and that I still have a chance. I really enjoy everything related to programming. I like learning, and the process itself motivates me a lot. What inspires me the most is the fact that I can create something new just by writing lines of code that may seem incomprehensible to many people. That is what makes programming so exciting and meaningful for me.",
+
+    "FEATURE_1": "I am currently living in Hagen, Germany. I am open to remote work and also willing to relocate, even to another country.",
+
+    "FEATURE_2": "Yes, I enjoy learning new things and improving my skills. I learn through courses, practice, and working on projects. In the beginning, it can be challenging, but with time, focus, and dedication, I am able to understand and make progress. This process motivates me to keep growing and becoming better.",
+
+    "FEATURE_3": "When I face a problem, I first analyze it and try to understand what is going wrong. It does not always work on the first try, but I keep going. I test different solutions and do not give up, even when it is difficult. I also search for answers online and ask colleagues when needed. I believe that making mistakes is part of the learning process, and I improve by learning from them. What inspires me in programming is the ability to create something from scratch and see real results from the code I write."
+  },
+
+  "SKILLS_SECTION": {
+    "SUBTITLE": "Technologies",
+    "TITLE": "Skill Set",
+
+    "TEXT": "I have experience working with front-end technologies such as HTML, CSS, JavaScript, TypeScript, SCSS, and Angular. I also use GitHub for version control and project management. I am highly motivated to continue learning and expanding my skill set. In the future, I plan to learn more programming languages and deepen my knowledge by moving into backend development. I understand that web development is constantly evolving, and I believe it is very important to keep up with new technologies and trends. That is why I am always open to learning and improving my skills.",
+
+    "QUESTION": "You need another skill?",
+    "DESCRIPTION": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "BUTTON": "Let's Talk",
+
+    "TOOLTIP": "I have a special interest in learning"
+  },
+
+  "PORTFOLIO": {
+    "SUBTITLE": "Portfolio",
+    "TITLE": "Featured Projects",
+    "DESCRIPTION": "Explore a selection of my work here - interact with projects to see my skills in action",
+
+    "MODAL": {
+      "ABOUT": "What is this project about?",
+      "GITHUB": "GitHub",
+      "LIVE": "Live Test",
+      "NEXT": "Next project"
+    }
+  },
+
+  "PROJECTS-MODAL": {
+    "JOIN": {
+      "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "POLLO": {
+      "DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+    },
+    "DABUBBLE": {
+      "DESCRIPTION": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+    }
+  },
+
+  "CONTACT": {
+    "SUBTITLE": "Contact me",
+    "TITLE": "Let's work together",
+
+    "QUESTION": "Got a problem to solve?",
+    "TEXT": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    "CTA": "Need a Fullstack developer?",
+    "CTA_HIGHLIGHT": "Let’s talk!",
+
+    "FORM": {
+      "NAME_LABEL": "What's your name?",
+      "NAME_PLACEHOLDER": "Your name goes here",
+
+      "EMAIL_LABEL": "What's your email?",
+      "EMAIL_PLACEHOLDER": "youremail@email.com",
+
+      "MESSAGE_LABEL": "How can I help you?",
+      "MESSAGE_PLACEHOLDER": "Hello Temirlan, I am interested in...",
+
+      "PRIVACY_1": "I've read the",
+      "PRIVACY_LINK": "privacy policy",
+      "PRIVACY_2": "and agree to the processing of my data as outlined.",
+
+      "BUTTON": "Say Hello ;)"
+    },
+
+    "ERRORS": {
+      "NAME": "Oops! it seems your name is missing",
+      "EMAIL": "Oops! your email is required",
+      "MESSAGE": "What do you need to develop?",
+      "PRIVACY": "Please accept the privacy policy."
+    }
+  },
+
+  "FOOTER": {
+    "ROLE": "Fullstack Developer",
+    "LOCATION": "Hagen, Germany",
+
+    "LINKS": {
+      "LEGAL": "Legal Notice",
+      "EMAIL": "Email",
+      "GITHUB": "GitHub",
+      "LINKEDIN": "LinkedIn"
+    },
+
+    "COPYRIGHT": "© Temirlan Gashimov 2026"
+  },
+
+  "LEGAL": {
+    "TITLE": "Legal Notice",
+
+    "IMPRINT_TITLE": "Imprint",
+    "NAME": "Temiran Gashimov",
+    "ADDRESS_1": "Augustastraße 16",
+    "ADDRESS_2": "58089 Hagen",
+
+    "CONTACT_TITLE": "Exploring the Board",
+    "EMAIL": "Email: Gahsimov.temerlan@gmail.com",
+
+    "TERMS_TITLE": "Acceptance of terms",
+    "TERMS_TEXT": "By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions and any updates.",
+
+    "SCOPE_TITLE": "Scope and ownership of the product",
+    "SCOPE_TEXT": "Portfolio has been developed as part of a student group project at Developer Akademie GmbH. It is for educational purposes only.",
+
+    "RIGHTS_TITLE": "Proprietary rights",
+    "RIGHTS_TEXT": "We retain all proprietary rights in Portfolio including any associated materials.",
+
+    "USE_TITLE": "Use of the product",
+    "USE_TEXT": "Portfolio is intended for lawful purposes only.",
+
+    "DISCLAIMER_TITLE": "Disclaimer of warranties and limitation of liability",
+    "DISCLAIMER_TEXT": "Portfolio is provided 'as is' without warranty of any kind.",
+
+    "INDEMNITY_TITLE": "Indemnity",
+    "INDEMNITY_TEXT": "You agree to indemnify all involved parties from any claims arising from use of this portfolio.",
+
+    "DATE": "Date: April 13, 2026"
+  }
+}
