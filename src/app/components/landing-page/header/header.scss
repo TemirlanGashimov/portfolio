@@ -18,7 +18,9 @@ header {
 .header__nav {
   @include flex-center;
   gap: 40px;
+  cursor: pointer;
 }
+
 
 .header__nav a {
   position: relative;
@@ -205,6 +207,8 @@ header {
 
     transition: all 0.3s ease;
     z-index: 999;
+
+
   }
 
   .header__nav.open {
