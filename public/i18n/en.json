@@ -20,7 +20,7 @@
     "SUBTITLE": "Who I Am",
     "TITLE": "About me",
 
-    "TEXT": "My name is Temirlan, and I come from Russia, from the Republic of Dagestan. I have been living in Europe since 2010. From 2010 to 2016, I lived in Austria, and in 2016 my family and I moved to Germany. Since then, I have been living in the city of Hagen. I have always been interested in the IT field. Back in my school years, it was my dream to work in IT. However, due to frequent relocations—first to Austria and then to Germany—I was not able to pursue this dream at that time. After studying at Developer Academy, I realized that it is not too late and that I still have a chance. I really enjoy everything related to programming. I like learning, and the process itself motivates me a lot. What inspires me the most is the fact that I can create something new just by writing lines of code that may seem incomprehensible to many people. That is what makes programming so exciting and meaningful for me.",
+    "TEXT": "My name is Temirlan and I am originally from Russia. I currently live in Hagen, Germany. I have been interested in the IT field from an early age and developed a strong desire to work in this area. Due to various life circumstances, I was not able to pursue this path at first. I am currently enrolled in an online training program at the Developer Akademie, where I continuously expand my knowledge in web development. I enjoy programming and like learning new technologies. What motivates me most is the opportunity to turn my own ideas into functional applications and continuously improve my skills.",
 
     "FEATURE_1": "I am currently living in Hagen, Germany. I am open to remote work and also willing to relocate, even to another country.",
 
@@ -35,7 +35,8 @@
 
     "TEXT": "I have experience working with front-end technologies such as HTML, CSS, JavaScript, TypeScript, SCSS, and Angular. I also use GitHub for version control and project management. I am highly motivated to continue learning and expanding my skill set. In the future, I plan to learn more programming languages and deepen my knowledge by moving into backend development. I understand that web development is constantly evolving, and I believe it is very important to keep up with new technologies and trends. That is why I am always open to learning and improving my skills.",
 
-    "QUESTION": "You need another skill?",
+    "QUESTION": "You need",
+    "QUESTION_HIGHLIGHT": "another skill?",
     "DESCRIPTION": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
     "BUTTON": "Let's Talk",
 
@@ -69,7 +70,8 @@
 
   "CONTACT": {
     "SUBTITLE": "Contact me",
-    "TITLE": "Let's work together",
+    "TITLE": "Let's work",
+    "TITLE_LINE2": "together",
 
     "QUESTION": "Got a problem to solve?",
     "TEXT": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",

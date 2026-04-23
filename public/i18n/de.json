@@ -19,7 +19,7 @@
     "SUBTITLE": "Wer ich bin",
     "TITLE": "Über mich",
 
-    "TEXT": "Mein Name ist Temirlan und ich komme aus Russland, aus der Republik Dagestan. Ich lebe seit 2010 in Europa. Von 2010 bis 2016 habe ich in Österreich gelebt, und 2016 ist meine Familie mit mir nach Deutschland gezogen. Seitdem lebe ich in der Stadt Hagen. Ich habe mich schon immer für den IT-Bereich interessiert. Bereits in meiner Schulzeit war es mein Traum, in der IT zu arbeiten. Aufgrund häufiger Umzüge – zuerst nach Österreich und später nach Deutschland – konnte ich diesen Traum damals jedoch nicht verfolgen. Nach meiner Ausbildung bei der Developer Academy habe ich erkannt, dass es nicht zu spät ist und ich immer noch eine Chance habe. Alles rund um das Programmieren macht mir große Freude. Ich lerne gerne, und der Prozess selbst motiviert mich sehr. Was mich am meisten inspiriert, ist die Tatsache, dass ich etwas Neues erschaffen kann, indem ich Code schreibe, der für viele Menschen zunächst unverständlich erscheint. Genau das macht Programmieren für mich so spannend und bedeutungsvoll.",
+    "TEXT": "Mein Name ist Temirlan und ich komme aus Russland. Ich lebe in Deutschland, in der Stadt Hagen. Schon früh habe ich mich für den IT-Bereich interessiert und den Wunsch entwickelt, in diesem Bereich zu arbeiten. Aufgrund verschiedener Lebensumstände konnte ich diesen Weg zunächst nicht verfolgen. Aktuell befinde ich mich in einer Online-Weiterbildung bei der Developer Akademie, in der ich meine Kenntnisse im Bereich Webentwicklung kontinuierlich ausbaue. Programmieren macht mir große Freude, und ich lerne gerne neue Technologien. Besonders motiviert mich die Möglichkeit, eigene Ideen in funktionierende Anwendungen umzusetzen und dabei meine Fähigkeiten stetig weiterzuentwickeln.",
 
     "FEATURE_1": "Ich lebe derzeit in Hagen, Deutschland. Ich bin offen für Remote-Arbeit und auch bereit, umzuziehen, sogar in ein anderes Land.",
 
@@ -30,11 +30,12 @@
 
   "SKILLS_SECTION": {
     "SUBTITLE": "Technologien",
-    "TITLE": "Fähigkeiten",
+    "TITLE": "Skills",
 
     "TEXT": "Ich habe Erfahrung mit Frontend-Technologien wie HTML, CSS, JavaScript, TypeScript, SCSS und Angular. Außerdem nutze ich GitHub für Versionskontrolle und Projektmanagement. Ich bin sehr motiviert, weiter zu lernen und meine Fähigkeiten auszubauen. In Zukunft möchte ich weitere Programmiersprachen lernen und mein Wissen im Backend-Bereich vertiefen. Ich verstehe, dass sich Webentwicklung ständig weiterentwickelt, und halte es für sehr wichtig, mit neuen Technologien und Trends Schritt zu halten. Deshalb bin ich immer offen dafür, Neues zu lernen und mich weiterzuentwickeln.",
 
-    "QUESTION": "Benötigen Sie eine weitere Fähigkeit?",
+    "QUESTION": "Benötigen Sie eine",
+    "QUESTION_HIGHLIGHT": "weitere Fähigkeit?",
     "DESCRIPTION": "Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
     "BUTTON": "Kontakt aufnehmen",
 
@@ -68,7 +69,8 @@
 
   "CONTACT": {
     "SUBTITLE": "Kontakt",
-    "TITLE": "Lass uns zusammenarbeiten",
+    "TITLE": "Lass uns zusammen",
+    "TITLE_LINE2": "arbeiten",
 
     "QUESTION": "Hast du ein Problem zu lösen?",
     "TEXT": "Ermutige Besucher, dich zu kontaktieren und zu beschreiben, welche Rolle sie suchen. Zeige, dass du mit deiner Arbeit Mehrwert bringst.",
