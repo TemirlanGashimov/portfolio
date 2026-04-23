@@ -1,10 +1,10 @@
 $mobile: 320px; //done
 $mobile-max: 391px; //done
-$mobile-lg: 670px; //done
+$mobile-lg: 710px; //done
 $tablet: 800px; // done
 $desktop: 1024px; //done
 $desktop-m: 1160px;
-$large: 4000px;
+// $large: 4000px;
 
 @mixin respond($size) {
   @if $size == mobile {
