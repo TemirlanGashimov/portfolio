@@ -7,9 +7,9 @@
   padding: 80px 120px;
 }
 
-.container {
-  max-width: 70%;
+.container--projects {
   margin-top: 32px;
+  width: 70%;
 }
 
 .subtitle {
@@ -282,15 +282,25 @@
 
 // Responsive Design //
 
-
+@include respond(desktop-m){
+  .preview{
+    width: 280px;
+  }
+}
 
 @include respond(desktop) {
   .portfolio {
     padding: 48px;
   }
 
-  .container {
-    max-width: 60%;
+    .container {
+    max-width: 100%;
+    margin-top: 8px;
+    padding: 0;
+  }
+
+  .container--projects {
+    width: 60%;
     margin-top: 8px;
     padding: 0;
   }
@@ -414,6 +424,11 @@
     right: 25px;
   }
 
+  .preview {
+    left: 105%;
+    width: 300px;
+  }
+
 }
 
 @include respond(tablet) {
@@ -423,6 +438,12 @@
 
   .container {
     max-width: 100%;
+    margin-top: 8px;
+    padding: 0;
+  }
+
+  .container--projects {
+    width: 100%;
     margin-top: 8px;
     padding: 0;
   }
@@ -556,14 +577,14 @@
     padding: 24px;
   }
 
-  .container {
-    max-width: 100%;
+  .container--projects {
+    width:  100%;
     margin-top: 8px;
     padding: 0;
   }
 
   .title {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
   }
 
@@ -626,7 +647,7 @@
     }
 
     h2 {
-      font-size: 56px;
+      font-size: 48px;
     }
 
     .modal-title {
@@ -691,12 +712,13 @@
     padding: 16px;
   }
 
-  .container {
+  .container--projects {
     padding: 0;
+    width: 100%;
   }
 
   .title {
-    font-size: 56px;
+    font-size: 46px;
     font-weight: 700;
   }
 
@@ -730,7 +752,7 @@
   .modal-content {
     width: 85%;
     max-width: 100%;
-    height: 95%;
+    height: 93%;
     min-height: unset;
     display: flex;
     flex-direction: column-reverse;
@@ -743,7 +765,7 @@
   }
 
   .modal-right img {
-    width: 100%;
+    width: 65%;
     max-width: 100%;
     height: auto;
   }
@@ -758,7 +780,7 @@
     }
 
     h2 {
-      font-size: 56px;
+      font-size: 40px;
     }
 
     .modal-title {
@@ -792,7 +814,7 @@
   }
 
   .modal .close {
-    top: 24px;
+    top: 16px;
     right: 16px;
     max-width: 100%;
   }
@@ -829,13 +851,14 @@
     padding: 8px
   }
 
-  .container {
+  .container--projects{
     padding: 0;
-    margin-top: 8px;
+    margin-top: 80px;
+    width: 100%;
   }
 
   .title {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
   }
 
@@ -869,7 +892,7 @@
   .modal-content {
     width: 85%;
     max-width: 100%;
-    height: 95%;
+    height: 92%;
     min-height: unset;
     display: flex;
     flex-direction: column-reverse;
