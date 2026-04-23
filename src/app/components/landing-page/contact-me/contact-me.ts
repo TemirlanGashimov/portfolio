@@ -1,63 +1,61 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf} from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule, NgIf, TranslatePipe],
+  imports: [ReactiveFormsModule, NgIf, TranslatePipe, RouterLink],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss',
 })
 export class ContactMe {
 
-  name: string = '';
-  email: string = '';
-  message: string = '';
-  privacyAccepted: boolean = false;
+  status: 'success' | 'error' | null = null;
 
-  submitted: boolean = false;
+  fb = inject(FormBuilder);
 
-  onSubmit() {
-    this.submitted = true;
+  form = this.fb.group ({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required],
+    privacy: [false, Validators.requiredTrue],
+    
+  });
 
-    if (!this.isFormValid()) {
+  submit() {
+    this.form.markAllAsTouched();
+
+    if (this.form.invalid) {
+      this.status = 'error';
       return;
     }
-      console.log('Form valid ✅');
 
-      this.name = '';
-      this.email = '';
-      this.message = '';
-      this.privacyAccepted = false;
-      this.submitted = false;
-    }
-  
+    this.status = 'success';
 
-  isFormValid(): boolean {
-    return (
-      this.name.trim() !== '' &&
-      this.email.trim() !== '' &&
-      this.message.trim() !== '' &&
-      this.privacyAccepted
-    );
+    this.form.reset();
+
+    setTimeout(() => {
+      this.status = null;
+    }, 3000);
   }
 
-  isNameInvalid() {
-    return this.submitted && this.name.trim() === '';
+  get name() {
+    return this.form.get('name');
   }
 
-  isEmailInvalid() {
-    return this.submitted && this.email.trim() === '';
+  get email() {
+    return this.form.get('email');
   }
 
-  isMessageInvalid() {
-    return this.submitted && this.message.trim() === '';
+  get message() {
+    return this.form.get('message');
   }
 
-  isCheckboxInvalid() {
-    return this.submitted && !this.privacyAccepted;
+  get privacy() {
+    return this.form.get('privacy');
   }
 }
