@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -56,4 +56,5 @@ export class Header {
   this.router.navigate(['/'],  {fragment: section})
 }
   }
+
 }
