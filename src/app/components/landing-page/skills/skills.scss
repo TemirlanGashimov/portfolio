@@ -6,7 +6,7 @@
 .skills {
   background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1c1c1c 100%)
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  padding: 80px 10%;
+  padding: 80px 80px;
 }
 
 .skills__container {
@@ -71,9 +71,8 @@
   flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-
-  padding: 30px;
+  gap: 20px;
+  padding: 16px;
 }
 
 .skills__item {
@@ -108,7 +107,7 @@
 .skills__tooltip {
   position: absolute;
   bottom: 87%; // über dem Icon
-  left: 80%;
+  left: 20%;
   transform: translateX(-50%) translateY(10px) scale(0.95);
   width: 170px;
   padding: 8px 8px 16px 8px;
@@ -161,11 +160,20 @@
 }
 
 @include respond(desktop-m) {
+
+  .skills__container {
+    flex-direction: column;
+    gap: 72px;
+    padding: 0;
+  }
+
+
     .skills__grid {
     margin-top: 32px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 0;
     gap: 34px;
+    
   }
 
 }
@@ -177,7 +185,7 @@
   }
 
   .skills__container {
-    // flex-direction: column;
+    flex-direction: column;
     gap: 72px;
     padding: 0;
   }
@@ -225,7 +233,7 @@
 
   .skills__grid {
     margin-top: 32px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 0;
     gap: 34px;
   }
@@ -344,9 +352,6 @@
   }
 }
 
-
-
-
 @include respond(mobile-lg) {
   .skills {
     padding: 24px;
@@ -368,7 +373,7 @@
   }
 
   .skills__title {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
     text-align: center;
   }
@@ -401,7 +406,7 @@
 
   .skills__grid {
     margin-top: 32px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 0;
     gap: 0;
   }
@@ -433,11 +438,6 @@
   }
 }
 
-
-
-
-
-
 @include respond(mobile-max) {
   .skills {
     padding: 56px 16px;
@@ -459,7 +459,7 @@
   }
 
   .skills__title {
-    font-size: 56px;
+    font-size: 46px;
     font-weight: 700;
     text-align: center;
   }
@@ -525,18 +525,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 @include respond(mobile) {
 
   .skills {
@@ -556,10 +544,11 @@
   .skills__subtitle {
     font-size: 16px;
     font-weight: 700;
+    margin-top: 80px;
   }
 
   .skills__title {
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 700;
     text-align: center;
   }
