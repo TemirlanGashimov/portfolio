@@ -9,7 +9,7 @@
   background-position: center;
   background-size: cover;
 
-  height: 100vh;
+  height: calc(100vh - 98px);
 
   position: relative;
   overflow: hidden;
@@ -34,13 +34,6 @@
   font-size: 128px;
   font-weight: 700;
   font-family: $font-main;
-}
-
-.side {
-  position: absolute;
-  left: 64px;
-  top: 70%;
-  z-index: 1;
 }
 
 .scroll-indicator {
@@ -82,32 +75,29 @@
   }
 }
 
+.side {
+  position: absolute;
+  left: 24px;
+  top: 112%;
+  z-index: 1;
+}
+
 /* Linie nach unten */
 .left__line {
   width: 2px;
   z-index: 1;
-  height: 186px;
+  height: 200px;
   background: linear-gradient(to bottom, $primary-color);
 }
 
 .side--right {
-  position: absolute;
-  right: 64px;
-  top: 37%;
+  right: 24px;
+  top: 38%;
   @include flex-center;
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
   z-index: 1;
-}
-
-/* Email vertikal */
-.side__email {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: white;
-  font-size: 14px;
-  letter-spacing: 1px;
 }
 
 .mail-icon {
@@ -119,17 +109,16 @@
   @include flex-center;
   flex-direction: column;
   gap: 8px;
-}
-
-.side__socials a {
+  cursor: pointer;
   position: relative;
-  display: flex;
-  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
 }
 
-// .email__side-icon {
-//   display: none;
-// }
+.side__socials:hover {
+  color: $primary-color;
+}
 
 .side__socials img {
   width: 32px;
@@ -141,39 +130,47 @@
   filter: brightness(0) invert(1);
 }
 
-.side__socials a::before {
+.side__socials a {
+  position: relative;
+}
+
+.side__socials a:not(.side__email)::before {
   content: '';
   position: absolute;
-
   top: 50%;
   transform: translateY(-50%) scale(0.5);
-
   right: -14px;
   width: 6px;
   height: 6px;
   background-color: $primary-color;
   border-radius: 50%;
   opacity: 0;
-
   transition: all 0.3s ease;
 }
 
-.side__socials a:hover::before {
+.side__socials a:not(.side__email):hover::before {
   opacity: 1;
   transform: translateY(-50%) scale(1);
   right: -14px; /* kleiner Slide */
 }
 
+.side__email {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-decoration: none;
+  color: white;
+}
+
 /* Linie */
 .right__line {
   width: 2px;
-  height: 160px;
+  height: 140px;
   background: linear-gradient(to bottom, white);
 }
 
 .marquee {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   width: 100%;
   height: 56px;
   overflow: hidden;
@@ -207,20 +204,13 @@
   }
 }
 
-@include respond(large) {
-  .email__side-icon {
-   display: none;
-  }
-   .side--right {
-    right: 48px;
-    top: 41%;
-  }
-
-}
-
 @include respond(desktop-m) {
+  .hero {
+    height: calc(100vh - 98px);
+  }
+
   .hero__content {
-    margin-top: 160px;
+    margin-top: 100px;
   }
 
   .hero__content p {
@@ -231,81 +221,76 @@
     font-size: 96px;
   }
 
-  .email__side-icon {
-   display: none;
+  .side--left {
+    top: 161%;
+    left: 52px;
   }
 
-  .side--left {
-    left: 48px;
+  .left__line {
+    height: 180px;
   }
 
   .side--right {
-    right: 48px;
-    top: 41%;
-  }
-}
-
-@include respond(desktop) {
-  .hero__content {
-    margin-top: 160px;
+    top: 70%;
+    right: 52px;
   }
 
-  .hero__content p {
-    font-size: 36px;
-  }
-
-  .hero__content h1 {
-    font-size: 96px;
-  }
-
-  .email__side-icon {
-   display: none;
-  }
-
-  .side--left {
-    left: 48px;
-  }
-
-  .side--right {
-    right: 48px;
-    top: 41%;
+  .right__line {
+    height: 130px;
   }
 }
 
 @include respond(tablet) {
+  .hero {
+    height: calc(100vh - 99px);
+  }
+
   .hero__content {
-    margin-top: 160px;
-  }
-
-  .hero__content p {
-    font-size: 36px;
-  }
-
-  .hero__content h1 {
-    font-size: 96px;
+    margin-top: 80px;
   }
 
   .side__email {
     display: none;
   }
 
-  .email__side-icon{
+  .email__side-icon {
+    display: block;
+  }
+
+  .mail-icon {
     display: block;
   }
 
   .side--left {
     left: 32px;
+    top: 113%;
+  }
+
+  .left__line {
+    height: 190px;
   }
 
   .side--right {
     right: 32px;
-    top: 66%;
+    top: 111%;
+  }
+
+  .right__line {
+    height: 130px;
+  }
+
+  .marquee {
+    bottom: 24px;
   }
 }
 
 @include respond(mobile-lg) {
+  .hero {
+    height: calc(100vh - 65px);
+  }
+
   .hero__content {
-    margin-top: 180px;
+    margin-top: 110px;
     padding: 24px;
   }
 
@@ -324,6 +309,9 @@
   .btn {
     padding: 12px 14px;
   }
+  .marquee {
+    bottom: 20px;
+  }
 
   .marquee span {
     font-size: 24px;
@@ -331,31 +319,30 @@
 
   .side--right {
     right: 24px;
-    top: 68%;
+    top: 136%;
   }
 
   .right__line {
-    height: 144px;
+    height: 100px;
   }
 
   .side--left {
-    top: 60%;
+    top: 124%;
     left: 24px;
   }
 
   .left__line {
-    height: 270px;
-  }
-
-  .marquee {
-    overflow: hidden;
-    max-width: 100%;
+    height: 205px;
   }
 }
 
 @include respond(mobile-max) {
+  .hero {
+    height: calc(100vh - 65px);
+  }
+
   .hero__content {
-    margin-top: 160px;
+    margin-top: 60px;
     padding: 0 16px 0 16px;
   }
 
@@ -371,8 +358,8 @@
     gap: 16px;
   }
 
-  .btn {
-    padding: 12px 14px;
+  .marquee {
+    bottom: 14px;
   }
 
   .marquee span {
@@ -381,31 +368,30 @@
 
   .side--right {
     right: 24px;
-    top: 70%;
+    top: 100%;
   }
 
   .right__line {
-    height: 130px;
+    height: 150px;
   }
 
   .side--left {
-    top: 60%;
+    top: 109%;
     left: 24px;
   }
 
   .left__line {
-    height: 270px;
-  }
-
-  .marquee {
-    overflow: hidden;
-    max-width: 100%;
+    height: 160px;
   }
 }
 
 @include respond(mobile) {
+  .hero {
+    height: calc(100vh - 65px);
+  }
+
   .hero__content {
-    margin-top: 180px;
+    margin-top: 110px;
     padding: 0 8px 0 8px;
   }
 
@@ -421,8 +407,8 @@
     gap: 8px;
   }
 
-  .btn {
-    padding: 12px 14px;
+  .marquee {
+    bottom: 10px;
   }
 
   .marquee span {
@@ -431,24 +417,78 @@
 
   .side--right {
     right: 18px;
-    top: 71%;
+    top: 127%;
   }
 
   .right__line {
-    height: 119px;
+    height: 195px;
   }
 
   .side--left {
-    top: 60%;
+    top: 122%;
     left: 18px;
   }
 
   .left__line {
-    height: 270px;
+    height: 275px;
+  }
+}
+
+@media (min-width: 627px) and (max-width: 710px) {
+  .side--right {
+    right: 24px;
+    top: 166%;
+  }
+
+  .right__line {
+    height: 130px;
+  }
+
+  .side--left {
+    top: 166%;
+    left: 24px;
+  }
+
+  .left__line {
+    height: 200px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+   .hero{
+    height: calc(100vh - 99px);
+  }
+
+.hero__content {
+    margin-top: 100px;
+  }
+
+  .hero__content p {
+    font-size: 36px;
+  }
+
+  .hero__content h1 {
+    font-size: 88px;
+  }
+
+  .side--left {
+    top: 166%;
+  }
+
+  .left__line {
+    height: 180px;
+  }
+
+  .side--right {
+    top: 72%;
+    right: 64px;
+  }
+
+  .right__line {
+    height: 130px;
   }
 
   .marquee {
-    overflow: hidden;
-    max-width: 100%;
+    bottom: 28px;
   }
 }
