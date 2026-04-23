@@ -88,6 +88,7 @@ header {
   display: none;
 }
 
+
 @include respond(mobile-lg) {
   .burger {
     position: absolute;
