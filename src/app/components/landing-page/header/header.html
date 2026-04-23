@@ -13,14 +13,10 @@
         <span (click)="setLanguage('de')" [class.active]="currentLanguage === 'de'">DE</span>
       </div>
 
-      <a (click)="scrollTo('about')" [class.active]="activeSection === 'about'"> {{ 'ABOUT' | translate }}</a>
-      <a (click)="scrollTo('skills')" [class.active]="activeSection === 'skills'">{{ 'SKILLS' | translate }}</a>
-      <a (click)="scrollTo('projects')" [class.active]="activeSection === 'projects'">{{ 'PROJECTS' | translate }}</a>
+      <a [routerLink]="['/']" fragment="about" (click)="setActive('about')" [class.active]="activeSection === 'about'"> {{ 'ABOUT' | translate }}</a>
+      <a [routerLink]="['/']" fragment="skills" (click)="setActive('skills')" [class.active]="activeSection === 'skills'">{{ 'SKILLS' | translate }}</a>
+      <a [routerLink]="['/']" fragment="projects" (click)="setActive('projects')" [class.active]="activeSection === 'projects'">{{ 'PROJECTS' | translate }}</a>
     </nav>
-
-    <!-- <div class="logo">
-      <div>Temirlan Gashimov</div>
-    </div> -->
   </div>
   </div>
 </header>
