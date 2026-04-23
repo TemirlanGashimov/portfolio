@@ -4,8 +4,8 @@
     <p>{{ 'HERO.ROLE' | translate }}</p>
     <h1>Temirlan Gashimov</h1>
     <div class="hero__buttons">
-      <a href="" class="btn"><span>{{ 'HERO.CTA_WORK' | translate }}</span></a>
-      <a href="" class="btn"><span>{{ 'HERO.CTA_CONTACT' | translate }}</span></a>
+      <a class="btn" [routerLink]="['/']" fragment="projects"> <span>{{ 'HERO.CTA_WORK' | translate }}</span></a>
+      <a class="btn" [routerLink]="['/']" fragment="contact-me"><span>{{ 'HERO.CTA_CONTACT' | translate }}</span></a>
     </div>
   </div>
 
@@ -31,10 +31,10 @@
         <img class="email__side-icon" src="icons/mail.png" alt="email"  />
       </a>
 
-      <a href="#">
+      <a href="https://github.com/TemirlanGashimov">
         <img src="icons/github.png" alt="github" />
       </a>
-      <a href="#">
+      <a href="https://www.linkedin.com/feed/">
         <img src="icons/linkedin.png" alt="linkedin" />
       </a>
 
