@@ -78,6 +78,12 @@
     "CTA": "Need a Fullstack developer?",
     "CTA_HIGHLIGHT": "Let’s talk!",
 
+    "MESSAGES": {
+      "EMAIL_INVALID": "Invalid email format",
+      "SUCCESS": "Email sent successfully",
+      "ERROR": "Email could not be sent"
+    },
+
     "FORM": {
       "NAME_LABEL": "What's your name?",
       "NAME_PLACEHOLDER": "Your name goes here",
