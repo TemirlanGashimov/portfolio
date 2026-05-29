@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -16,7 +15,7 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, TranslatePipe],
+  imports: [TranslatePipe],
   standalone: true,
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss'],
