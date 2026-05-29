@@ -4,9 +4,8 @@
 @use '../../../../styles/abstracts/breakpoints' as *;
 
 .skills {
-  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1c1c1c 100%)
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  padding: 80px 80px;
+  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1c1c1c 100%);
+  padding: 0px 96px 144px;
 }
 
 .skills__container {
@@ -72,7 +71,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 16px;
 }
 
 .skills__item {
@@ -83,8 +81,8 @@
 
   padding: 20px;
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
   cursor: pointer;
 
   img {
@@ -160,24 +158,19 @@
 }
 
 @include respond(desktop-m) {
-
   .skills__container {
     flex-direction: column;
     gap: 72px;
     padding: 0;
   }
 
-
-    .skills__grid {
+  .skills__grid {
     margin-top: 32px;
     grid-template-columns: repeat(4, 1fr);
     padding: 0;
     gap: 34px;
-    
   }
-
 }
-
 
 @include respond(desktop) {
   .skills {
@@ -249,10 +242,9 @@
   }
 
   .skills__tooltip-icons {
-
     img {
-        width: 32px;
-        height: 32px;
+      width: 32px;
+      height: 32px;
     }
   }
 
@@ -264,7 +256,6 @@
     left: 135px;
   }
 }
-
 
 @include respond(tablet) {
   .skills {
@@ -336,10 +327,9 @@
   }
 
   .skills__tooltip-icons {
-
     img {
-        width: 32px;
-        height: 32px;
+      width: 32px;
+      height: 32px;
     }
   }
 
@@ -422,10 +412,9 @@
   }
 
   .skills__tooltip-icons {
-
     img {
-        width: 32px;
-        height: 32px;
+      width: 32px;
+      height: 32px;
     }
   }
 
@@ -480,7 +469,6 @@
   .skills__highlight {
     font-size: 20px;
     line-height: 1.6;
-
   }
 
   .skills__description {
@@ -509,10 +497,9 @@
   }
 
   .skills__tooltip-icons {
-
     img {
-        width: 32px;
-        height: 32px;
+      width: 32px;
+      height: 32px;
     }
   }
 
@@ -526,7 +513,6 @@
 }
 
 @include respond(mobile) {
-
   .skills {
     padding: 0 8px 0 8px;
   }

@@ -4,7 +4,7 @@
 
 .contact {
   background: rgb(28, 28, 28);
-  padding: 80px 80px;
+  padding: 144px 96px 0;
 
   &__container {
     max-width: 1500px;
@@ -361,7 +361,6 @@ textarea:-webkit-autofill {
   }
 }
 
-
 @include respond(tablet) {
   .contact {
     padding: 34px;
@@ -492,7 +491,7 @@ textarea:-webkit-autofill {
 
 @include respond(mobile-max) {
   .contact {
-    padding: 16px
+    padding: 16px;
   }
 
   .contact__container {

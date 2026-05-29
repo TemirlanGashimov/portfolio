@@ -20,7 +20,7 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
-  margin-top: 150px;
+  margin: 160px 60px 0;
   z-index: 2;
 }
 
@@ -78,7 +78,7 @@
 .side {
   position: absolute;
   left: 24px;
-  top: 112%;
+  top: 109%;
   z-index: 1;
 }
 
@@ -92,7 +92,7 @@
 
 .side--right {
   right: 24px;
-  top: 38%;
+  top: 35%;
   @include flex-center;
   flex-direction: column;
   align-items: flex-end;
@@ -175,7 +175,7 @@
 
 .marquee {
   position: absolute;
-  bottom: 40px;
+  bottom: 33px;
   width: 100%;
   height: 56px;
   overflow: hidden;

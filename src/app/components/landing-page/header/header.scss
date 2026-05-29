@@ -11,7 +11,7 @@ header {
 .nav-links {
   display: flex;
   align-items: center;
-  padding: 32px 64px;
+  padding: 35px 100px;
 }
 
 .header__nav {
@@ -19,7 +19,6 @@ header {
   gap: 40px;
   cursor: pointer;
 }
-
 
 .header__nav a {
   position: relative;
@@ -87,7 +86,6 @@ header {
 .burger {
   display: none;
 }
-
 
 @include respond(mobile-lg) {
   .burger {
@@ -207,8 +205,6 @@ header {
 
     transition: all 0.3s ease;
     z-index: 999;
-
-
   }
 
   .header__nav.open {
