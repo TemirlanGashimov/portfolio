@@ -6,582 +6,330 @@
 .skills {
   background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1c1c1c 100%);
   padding: 0px 96px 144px;
-}
 
-.skills__container {
-  @include flex-center;
-  justify-content: space-between;
-  gap: 60px;
-}
-.skills__content {
-  flex: 1;
-}
-
-.skills__subtitle {
-  color: $primary-color;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.skills__card {
-  border: 1px solid $primary-color;
-  border-radius: 30px;
-  padding: 40px;
-  background: rgba(43, 212, 189, 0.05);
-  backdrop-filter: blur(10px);
-}
-
-.skills__title {
-  font-size: 64px;
-  color: $primary-color;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-family: $font-code;
-}
-
-.skills__text {
-  color: white;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.skills__heading {
-  font-size: 24px;
-  font-family: $font-code;
-  padding-bottom: 10px;
-}
-
-.skills__highlight {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-family: $font-code;
-  color: $primary-color;
-}
-
-.skills__description {
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.skills__grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.skills__item {
-  position: relative;
-  @include flex-center;
-  flex-direction: column;
-  text-align: center;
-
-  padding: 20px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  cursor: pointer;
-
-  img {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
-
-  .skills__label {
-    font-size: 18px;
-    font-family: $font-code;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-.skills__tooltip {
-  position: absolute;
-  bottom: 87%; // über dem Icon
-  left: 20%;
-  transform: translateX(-50%) translateY(10px) scale(0.95);
-  width: 170px;
-  padding: 8px 8px 16px 8px;
-  background: white;
-  border-radius: 20px;
-  color: $primary-color;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-  z-index: 10; // über allem
-
-  img {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-.skills__tooltip-text {
-  padding-bottom: 8px;
-  font-size: 16px;
-  color: $primary-hover;
-}
-
-.skills__tooltip-icons--label {
-  color: $primary-hover;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.skills__tooltip::after {
-  position: absolute;
-  bottom: -19px;
-  left: 25%;
-  transform: translateX(-50%);
-
-  border-width: 10px;
-  border-style: solid;
-  border-color: #e9e9e9 transparent transparent transparent;
-}
-
-.skills__item:hover .skills__tooltip,
-.skills__tooltip:hover {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.skills__tooltip-icons {
-  @include flex-center;
-  gap: 20px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-@include respond(desktop-m) {
-  .skills__container {
-    flex-direction: column;
-    gap: 72px;
-    padding: 0;
-  }
-
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0;
-    gap: 34px;
-  }
-}
-
-@include respond(desktop) {
-  .skills {
+  @include respond(desktop) {
     padding: 48px;
   }
 
-  .skills__container {
-    flex-direction: column;
-    gap: 72px;
-    padding: 0;
-  }
-
-  .skills__content {
-    padding: 0;
-  }
-
-  .skills__subtitle {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .skills__title {
-    font-size: 56px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .skills__card {
-    padding: 18px;
-  }
-
-  .skills__text {
-    font-size: 18px;
-    padding: 0 24px 0 24px;
-  }
-
-  .skills__heading {
-    font-size: 24px;
-    padding: 0 24px 0 24px;
-  }
-  .skills__highlight {
-    font-size: 24px;
-    line-height: 1.6;
-  }
-
-  .skills__description {
-    padding: 16px 24px 0 24px;
-  }
-
-  .btn {
-    left: 24px;
-  }
-
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0;
-    gap: 34px;
-  }
-
-  .skills__item {
-    padding: 2px;
-    padding-bottom: 16px;
-
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
-  .skills__tooltip-icons {
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .skills__tooltip {
-    left: 32px;
-  }
-
-  .skills__tooltip::after {
-    left: 135px;
-  }
-}
-
-@include respond(tablet) {
-  .skills {
+  @include respond(tablet) {
     padding: 34px;
   }
 
-  .skills__container {
-    flex-direction: column;
-    gap: 72px;
-    padding: 0;
-  }
-
-  .skills__content {
-    padding: 0;
-  }
-
-  .skills__subtitle {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .skills__title {
-    font-size: 56px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .skills__card {
-    padding: 18px;
-  }
-
-  .skills__text {
-    font-size: 18px;
-    padding: 0 24px 0 24px;
-  }
-
-  .skills__heading {
-    font-size: 24px;
-    padding: 0 24px 0 24px;
-  }
-  .skills__highlight {
-    font-size: 24px;
-    line-height: 1.6;
-  }
-
-  .skills__description {
-    padding: 16px 24px 0 24px;
-  }
-
-  .btn {
-    left: 24px;
-  }
-
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0;
-    gap: 34px;
-  }
-
-  .skills__item {
-    padding: 2px;
-    padding-bottom: 16px;
-
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
-  .skills__tooltip-icons {
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .skills__tooltip {
-    left: 32px;
-  }
-
-  .skills__tooltip::after {
-    left: 135px;
-  }
-}
-
-@include respond(mobile-lg) {
-  .skills {
+  @include respond(mobile-lg) {
     padding: 24px;
   }
 
-  .skills__container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .skills__content {
-    padding: 0;
-  }
-
-  .skills__subtitle {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .skills__title {
-    font-size: 50px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .skills__card {
-    padding: 18px;
-  }
-
-  .skills__text {
-    font-size: 18px;
-    padding: 0 24px 0 24px;
-  }
-
-  .skills__heading {
-    font-size: 24px;
-    padding: 0 24px 0 24px;
-  }
-  .skills__highlight {
-    font-size: 24px;
-    line-height: 1.6;
-  }
-
-  .skills__description {
-    padding: 16px 24px 0 24px;
-  }
-
-  .btn {
-    left: 24px;
-  }
-
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0;
-    gap: 0;
-  }
-
-  .skills__item {
-    padding: 2px;
-    padding-bottom: 16px;
-
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
-  .skills__tooltip-icons {
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .skills__tooltip {
-    left: 32px;
-  }
-
-  .skills__tooltip::after {
-    left: 135px;
-  }
-}
-
-@include respond(mobile-max) {
-  .skills {
+  @include respond(mobile-max) {
     padding: 56px 16px;
   }
 
-  .skills__container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .skills__content {
-    padding: 0;
-  }
-
-  .skills__subtitle {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .skills__title {
-    font-size: 46px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .skills__card {
-    padding: 16px;
-  }
-
-  .skills__text {
-    font-size: 16px;
-    padding: 0 12px 0 12px;
-  }
-
-  .skills__heading {
-    font-size: 20px;
-    padding: 0 12px 0 12px;
-  }
-  .skills__highlight {
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  .skills__description {
-    padding: 16px 12px 0 12px;
-  }
-
-  .btn {
-    left: 12px;
-  }
-
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0;
-    gap: 0;
-  }
-
-  .skills__item {
-    padding: 2px;
-    padding-bottom: 16px;
-
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
-  .skills__tooltip-icons {
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .skills__tooltip {
-    left: 32px;
-  }
-
-  .skills__tooltip::after {
-    left: 135px;
-  }
-}
-
-@include respond(mobile) {
-  .skills {
+  @include respond(mobile) {
     padding: 0 8px 0 8px;
   }
 
-  .skills__container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
+  &__container {
+    @include flex-center;
+    justify-content: space-between;
+    gap: 60px;
+
+    @include respond(desktop-m) {
+      flex-direction: column;
+      gap: 72px;
+      padding: 0;
+    }
+
+    @include respond(mobile-lg) {
+      gap: 20px;
+    }
   }
 
-  .skills__content {
-    padding: 0;
+  &__content {
+    flex: 1;
+
+    @include respond(desktop) {
+      padding: 0;
+    }
   }
 
-  .skills__subtitle {
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 80px;
-  }
-
-  .skills__title {
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .skills__card {
-    padding: 16px;
-  }
-
-  .skills__text {
-    font-size: 16px;
-    padding: 0;
-  }
-
-  .skills__heading {
+  &__subtitle {
+    color: $primary-color;
+    margin-bottom: 20px;
     font-size: 18px;
-    padding: 0;
+
+    @include respond(desktop) {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 18px;
+    }
+
+    @include respond(mobile) {
+      font-size: 16px;
+      margin-top: 80px;
+    }
   }
-  .skills__highlight {
-    font-size: 18px;
+
+  &__card {
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    padding: 40px;
+    background: rgba(43, 212, 189, 0.05);
+    backdrop-filter: blur(10px);
+
+    @include respond(desktop) {
+      padding: 18px;
+    }
+
+    @include respond(mobile-max) {
+      padding: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    color: $primary-color;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: $font-code;
+
+    @include respond(desktop) {
+      font-size: 56px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @include respond(mobile-lg) {
+      font-size: 50px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 46px;
+    }
+
+    @include respond(mobile) {
+      font-size: 36px;
+    }
+  }
+
+  &__text {
+    color: white;
     line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 18px;
+
+    @include respond(desktop) {
+      padding: 0 24px 0 24px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 16px;
+      padding: 0 12px 0 12px;
+    }
+
+    @include respond(mobile) {
+      padding: 0;
+    }
   }
 
-  .skills__description {
-    padding: 8px 0 8px 0;
+  &__heading {
+    font-size: 24px;
+    font-family: $font-code;
+    padding-bottom: 10px;
+
+    @include respond(desktop) {
+      padding: 0 24px 0 24px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 20px;
+      padding: 0 12px 0 12px;
+    }
+
+    @include respond(mobile) {
+      font-size: 18px;
+      padding: 0;
+    }
   }
 
-  .skills__grid {
-    margin-top: 32px;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
+  &__highlight {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: $font-code;
+    color: $primary-color;
+
+    @include respond(desktop) {
+      line-height: 1.6;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 20px;
+    }
+
+    @include respond(mobile) {
+      font-size: 18px;
+    }
   }
 
-  .skills__item {
-    padding: 8px;
+  &__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include respond(desktop) {
+      padding: 16px 24px 0 24px;
+    }
+
+    @include respond(mobile-max) {
+      padding: 16px 12px 0 12px;
+    }
+
+    @include respond(mobile) {
+      padding: 8px 0;
+    }
   }
 
-  .skills__tooltip {
-    left: 32px;
+  &__button {
+    @include respond(desktop) {
+      left: 24px;
+    }
+
+    @include respond(mobile-max) {
+      left: 12px;
+    }
   }
 
-  .skills__tooltip::after {
-    left: 135px;
+  &__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include respond(desktop-m) {
+      margin-top: 32px;
+      padding: 0;
+      gap: 34px;
+    }
+
+    @include respond(mobile-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include respond(desktop) {
+      padding: 2px 2px 16px;
+    }
+
+    @include respond(mobile) {
+      padding: 8px;
+    }
+
+    &-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 10px;
+
+      @include respond(desktop) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &-label {
+      font-size: 18px;
+      font-family: $font-code;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: 87%;
+    left: 20%;
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+    width: 170px;
+    padding: 8px 8px 16px 8px;
+    background: white;
+    border-radius: 20px;
+    color: $primary-color;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+    z-index: 10;
+
+    &::after {
+      position: absolute;
+      bottom: -19px;
+      left: 25%;
+      transform: translateX(-50%);
+      border-width: 10px;
+      border-style: solid;
+      border-color: #e9e9e9 transparent transparent transparent;
+      content: '';
+
+      @include respond(desktop) {
+        left: 135px;
+      }
+    }
+
+    @include respond(desktop) {
+      left: 32px;
+    }
+
+    &-text {
+      padding-bottom: 8px;
+      font-size: 16px;
+      color: $primary-hover;
+    }
+
+    &-icons {
+      @include flex-center;
+      gap: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    &-icon-img {
+      width: 32px;
+      height: 32px;
+    }
+
+    &-icon-label {
+      color: $primary-hover;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__item:hover &__tooltip,
+  &__tooltip:hover {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events: auto;
   }
 }
