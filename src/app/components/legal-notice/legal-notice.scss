@@ -2,116 +2,83 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/breakpoints' as *;
 
-.legal{
-  background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+.legal {
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   color: $primary-color;
+  padding: 80px 0;
 
-}
-
-.legal-container {
-  margin: 0px 120px;
-  padding: 40px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 64px;
-  font-weight: 700;
-  font-family: $font-code;
-  margin-bottom: 60px;
-}
-
-h3 {
-  margin-top: 30px;
-  margin-bottom: 8px;
-  font-size: 19px;
-  font-weight: 700;
-  font-family: $font-main;
-  color: white;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: $font-main;
-  font-weight: 400;
-}
-
-ul {
-  padding-left: 24px;
-}
-
-.date {
-  margin-top: 30px;
-  font-size: 19px;
-  // opacity: 0.7;
-}
-
-span {
-  color: white;
-}
-
-@include respond(desktop){
-
-  .legal {
+  @include respond(desktop) {
     padding: 48px;
   }
-
-  .legal-container{
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    font-size: 64px;
-  }
-
-}
-
-
-@include respond(tablet) {
-
-  .legal {
+  @include respond(tablet) {
     padding: 34px;
   }
-
-  h1 {
-    font-size: 58px;
-  }
-}
-
-
-
-@include respond(mobile-lg){
-  .legal {
+  @include respond(mobile-lg) {
     padding: 24px;
   }
-
-  h1 {
-    font-size: 44px;
-  }
-}
-
-
-@include respond(mobile-max){
-  .legal {
+  @include respond(mobile-max) {
     padding: 16px;
   }
-
-  h1 {
-    font-size: 36px;
-  }
-}
-
-
-
-@include respond(mobile) {
-  .legal {
+  @include respond(mobile) {
     padding: 8px;
   }
 
-  h1 {
-    font-size: 36px;
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+
+    @include respond(desktop) {
+      padding: 0;
+    }
   }
-  
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    font-family: $font-code;
+    margin-bottom: 60px;
+
+    @include respond(tablet) {
+      font-size: 58px;
+    }
+    @include respond(mobile-lg) {
+      font-size: 44px;
+    }
+    @include respond(mobile-max) {
+      font-size: 36px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    margin-top: 30px;
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: $font-main;
+    color: white;
+  }
+
+  &__text,
+  &__list-item {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: $font-main;
+    font-weight: 400;
+  }
+
+  &__list {
+    padding-left: 24px;
+    margin: 10px 0;
+  }
+
+  &__date {
+    margin-top: 30px;
+    font-size: 19px;
+  }
 }
