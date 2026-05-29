@@ -60,7 +60,7 @@
 
             <!-- FORMAT -->
             <span class="form__error" *ngIf="email?.touched && email?.errors?.['email']">
-               {{ 'CONTACT.MESSAGES.EMAIL_INVALID' | translate }}
+              {{ 'CONTACT.MESSAGES.EMAIL_INVALID' | translate }}
             </span>
           </div>
 
@@ -114,7 +114,9 @@
             ✔ {{ 'CONTACT.MESSAGES.SUCCESS' | translate }}
           </p>
 
-          <p class="form__feedback error" *ngIf="status === 'error'">✖ {{ 'CONTACT.MESSAGES.ERROR' | translate }}</p>
+          <p class="form__feedback error" *ngIf="status === 'error'">
+            ✖ {{ 'CONTACT.MESSAGES.ERROR' | translate }}
+          </p>
         </form>
       </div>
     </div>
