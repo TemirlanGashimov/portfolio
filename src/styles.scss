@@ -1,24 +1,13 @@
 @use './styles/abstracts/variables' as *;
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: $font-main;
-    color: white;
-}
+@use './styles/abstracts/base/reset';
+@use './styles/abstracts/base/typography';
 
 body.no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
 }
