@@ -157,8 +157,8 @@
     z-index: 1;
 
     &--left {
-      left: 24px;
-      top: 306px;
+      left: 44px;
+      top: 310px;
 
       @include respond(desktop-m) {
         left: 42px;
@@ -187,12 +187,13 @@
 
       @media (min-width: 801px) and (max-width: 1024px) {
         top: 350px;
+        left: 54px;
       }
     }
 
     &--right {
-      right: 24px;
-      top: 35%;
+      right: 44px;
+      top: 94px;
       @include flex-center;
       flex-direction: column;
       align-items: flex-end;
@@ -224,7 +225,7 @@
       }
 
       @media (min-width: 801px) and (max-width: 1024px) {
-        right: 64px;
+        right: 54px;
         top: 124px;
       }
     }
