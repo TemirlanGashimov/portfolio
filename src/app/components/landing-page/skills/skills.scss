@@ -81,8 +81,8 @@
 
   padding: 20px;
   transition:
-  transform 0.3s ease,
-  box-shadow 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 
   img {
@@ -129,10 +129,16 @@
 .skills__tooltip-text {
   padding-bottom: 8px;
   font-size: 16px;
+  color: $primary-hover;
+}
+
+.skills__tooltip-icons--label {
+  color: $primary-hover;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .skills__tooltip::after {
-  content: '';
   position: absolute;
   bottom: -19px;
   left: 25%;
