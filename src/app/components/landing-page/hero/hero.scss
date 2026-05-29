@@ -12,10 +12,6 @@
   position: relative;
   overflow: hidden;
 
-  // @include respond(tablet) {
-  //   height: calc(100vh - 99px);
-  // }
-
   @include respond(mobile-lg) {
     height: calc(100vh - 65px);
   }
@@ -158,42 +154,42 @@
 
     &--left {
       left: 44px;
-      top: 310px;
+      top: 402px;
 
       @include respond(desktop-m) {
         left: 42px;
-        top: 330px;
+        top: 422px;
       }
 
       @include respond(tablet) {
         left: 32px;
-        top: 270px;
+        top: 362px;
       }
 
       @include respond(mobile-lg) {
         left: 24px;
-        top: 370px;
+        top: 464px;
       }
 
       @include respond(mobile-max) {
         left: 24px;
-        top: 362px;
+        top: 454px;
       }
 
       @include respond(mobile) {
         left: 18px;
-        top: 362px;
+        top: 454px;
       }
 
       @media (min-width: 801px) and (max-width: 1024px) {
-        top: 350px;
+        top: 440px;
         left: 54px;
       }
     }
 
     &--right {
       right: 44px;
-      top: 94px;
+      top: 176px;
       @include flex-center;
       flex-direction: column;
       align-items: flex-end;
@@ -201,32 +197,32 @@
 
       @include respond(desktop-m) {
         right: 42px;
-        top: 124px;
+        top: 216px;
       }
 
       @include respond(tablet) {
         right: 32px;
-        top: 286px;
+        top: 378px;
       }
 
       @include respond(mobile-lg) {
         right: 24px;
-        top: 378px;
+        top: 470px;
       }
 
       @include respond(mobile-max) {
         right: 24px;
-        top: 388px;
+        top: 480px;
       }
 
       @include respond(mobile) {
         right: 18px;
-        top: 378px;
+        top: 470px;
       }
 
       @media (min-width: 801px) and (max-width: 1024px) {
         right: 54px;
-        top: 124px;
+        top: 215px;
       }
     }
   }
@@ -265,7 +261,7 @@
     }
 
     &--right {
-      height: 140px;
+      height: 150px;
       background: linear-gradient(to bottom, white);
 
       @include respond(desktop-m) {
