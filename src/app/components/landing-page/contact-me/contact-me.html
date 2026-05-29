@@ -1,124 +1,125 @@
 <section class="contact">
-  <div class="container">
-    <div class="contact__container">
-      <!-- LEFT SIDE -->
-      <div class="contact__left">
-        <p class="contact__subtitle">{{ 'CONTACT.SUBTITLE' | translate }}</p>
+  <div class="contact__container container">
+    <div class="contact__left">
+      <p class="contact__subtitle">{{ 'CONTACT.SUBTITLE' | translate }}</p>
 
-        <h2 class="contact__title">
-          {{ 'CONTACT.TITLE' | translate }}
-          <br />
-          {{ 'CONTACT.TITLE_LINE2' | translate }}
-        </h2>
+      <h2 class="contact__title">
+        {{ 'CONTACT.TITLE' | translate }}
+        <br />
+        {{ 'CONTACT.TITLE_LINE2' | translate }}
+      </h2>
 
-        <div class="contact__description">
-          <p class="contact__question">{{ 'CONTACT.QUESTION' | translate }}</p>
+      <div class="contact__description">
+        <p class="contact__question">{{ 'CONTACT.QUESTION' | translate }}</p>
 
-          <p class="contact__text">
-            {{ 'CONTACT.TEXT' | translate }}
-          </p>
+        <p class="contact__text">
+          {{ 'CONTACT.TEXT' | translate }}
+        </p>
 
-          <p class="contact__cta">
-            {{ 'CONTACT.CTA' | translate }}
-            <span>{{ 'CONTACT.CTA_HIGHLIGHT' | translate }}</span>
-          </p>
-        </div>
+        <p class="contact__cta">
+          {{ 'CONTACT.CTA' | translate }}
+          <span class="contact__cta-highlight">{{ 'CONTACT.CTA_HIGHLIGHT' | translate }}</span>
+        </p>
       </div>
+    </div>
 
-      <!-- RIGHT SIDE -->
-      <div class="contact__right">
-        <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()">
-          <!-- NAME -->
-          <div class="form__group">
-            <label>{{ 'CONTACT.FORM.NAME_LABEL' | translate }}</label>
+    <div class="contact__right">
+      <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="contact__form-group">
+          <label class="contact__form-label">{{ 'CONTACT.FORM.NAME_LABEL' | translate }}</label>
 
-            <input
-              type="text"
-              formControlName="name"
-              [placeholder]="'CONTACT.FORM.NAME_PLACEHOLDER' | translate"
-            />
+          <input
+            class="contact__form-input"
+            type="text"
+            formControlName="name"
+            [placeholder]="'CONTACT.FORM.NAME_PLACEHOLDER' | translate"
+          />
 
-            <span class="form__error" *ngIf="name?.touched && name?.invalid">
+          @if (name?.touched && name?.invalid) {
+            <span class="contact__form-error">
               {{ 'CONTACT.ERRORS.NAME' | translate }}
             </span>
-          </div>
+          }
+        </div>
 
-          <!-- EMAIL -->
-          <div class="form__group">
-            <label>{{ 'CONTACT.FORM.EMAIL_LABEL' | translate }}</label>
+        <div class="contact__form-group">
+          <label class="contact__form-label">{{ 'CONTACT.FORM.EMAIL_LABEL' | translate }}</label>
 
-            <input
-              type="email"
-              formControlName="email"
-              [placeholder]="'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate"
-            />
+          <input
+            class="contact__form-input"
+            type="email"
+            formControlName="email"
+            [placeholder]="'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate"
+          />
 
-            <!-- REQUIRED -->
-            <span class="form__error" *ngIf="email?.touched && email?.errors?.['required']">
+          @if (email?.touched && email?.errors?.['required']) {
+            <span class="contact__form-error">
               {{ 'CONTACT.ERRORS.EMAIL' | translate }}
             </span>
+          }
 
-            <!-- FORMAT -->
-            <span class="form__error" *ngIf="email?.touched && email?.errors?.['email']">
+          @if (email?.touched && (email?.errors?.['email'] || email?.errors?.['pattern'])) {
+            <span class="contact__form-error">
               {{ 'CONTACT.MESSAGES.EMAIL_INVALID' | translate }}
             </span>
-          </div>
+          }
+        </div>
 
-          <!-- MESSAGE -->
-          <div class="form__group">
-            <label>{{ 'CONTACT.FORM.MESSAGE_LABEL' | translate }}</label>
+        <div class="contact__form-group">
+          <label class="contact__form-label">{{ 'CONTACT.FORM.MESSAGE_LABEL' | translate }}</label>
 
-            <textarea
-              rows="3"
-              formControlName="message"
-              [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
-            >
-            </textarea>
+          <textarea
+            class="contact__form-textarea"
+            rows="3"
+            formControlName="message"
+            [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
+          ></textarea>
 
-            <span class="form__error" *ngIf="message?.touched && message?.invalid">
+          @if (message?.touched && message?.invalid) {
+            <span class="contact__form-error">
               {{ 'CONTACT.ERRORS.MESSAGE' | translate }}
             </span>
-          </div>
+          }
+        </div>
 
-          <!-- CHECKBOX -->
-          <div class="form__checkbox-wrapper">
-            <label class="form__checkbox">
-              <input type="checkbox" formControlName="privacy" />
+        <div class="contact__form-checkbox-wrapper">
+          <label class="contact__form-checkbox">
+            <input class="contact__form-checkbox-input" type="checkbox" formControlName="privacy" />
 
-              <span class="checkmark"></span>
+            <span class="contact__form-checkmark"></span>
 
-              <span class="text">
-                {{ 'CONTACT.FORM.PRIVACY_1' | translate }}
-                <a class="link" [routerLink]="['/legal-notice']">
-                  {{ 'CONTACT.FORM.PRIVACY_LINK' | translate }}
-                </a>
-                {{ 'CONTACT.FORM.PRIVACY_2' | translate }}
-              </span>
-            </label>
+            <span class="contact__form-checkbox-text">
+              {{ 'CONTACT.FORM.PRIVACY_1' | translate }}
+              <a class="contact__form-checkbox-link" [routerLink]="['/legal-notice']">
+                {{ 'CONTACT.FORM.PRIVACY_LINK' | translate }}
+              </a>
+              {{ 'CONTACT.FORM.PRIVACY_2' | translate }}
+            </span>
+          </label>
 
-            <span
-              class="form__error form__error--checkbox"
-              *ngIf="privacy?.touched && privacy?.invalid"
-            >
+          @if (privacy?.touched && privacy?.invalid) {
+            <span class="contact__form-error contact__form-error--checkbox">
               {{ 'CONTACT.ERRORS.PRIVACY' | translate }}
             </span>
-          </div>
+          }
+        </div>
 
-          <!-- BUTTON -->
-          <button type="submit" class="btn" [class.active]="form.valid">
-            <span>{{ 'CONTACT.FORM.BUTTON' | translate }}</span>
-          </button>
+        <button type="submit" class="contact__form-button btn" [class.active]="form.valid">
+          <span>{{ 'CONTACT.FORM.BUTTON' | translate }}</span>
+        </button>
 
-          <!-- FEEDBACK -->
-          <p class="form__feedback success" *ngIf="status === 'success'">
+        @if (status === 'success') {
+          <p class="contact__form-feedback contact__form-feedback--success">
             ✔ {{ 'CONTACT.MESSAGES.SUCCESS' | translate }}
           </p>
+        }
 
-          <p class="form__feedback error" *ngIf="status === 'error'">
+        @if (status === 'error') {
+          <p class="contact__form-feedback contact__form-feedback--error">
             ✖ {{ 'CONTACT.MESSAGES.ERROR' | translate }}
           </p>
-        </form>
-      </div>
+        }
+      </form>
     </div>
   </div>
 </section>

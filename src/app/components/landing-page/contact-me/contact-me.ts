@@ -1,29 +1,28 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgIf} from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
-import { RouterLink } from "@angular/router";
-
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, TranslatePipe, RouterLink],
+  imports: [ReactiveFormsModule, TranslatePipe, RouterLink],
   templateUrl: './contact-me.html',
   styleUrls: ['./contact-me.scss'],
 })
 export class ContactMe {
-
   status: 'success' | 'error' | null = null;
 
   fb = inject(FormBuilder);
 
-  form = this.fb.group ({
+  form = this.fb.group({
     name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    email: [
+      '',
+      [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)],
+    ],
     message: ['', Validators.required],
     privacy: [false, Validators.requiredTrue],
-    
   });
 
   submit() {
