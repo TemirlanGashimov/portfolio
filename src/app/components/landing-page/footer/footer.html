@@ -1,23 +1,24 @@
 <footer class="footer">
-    <div class="container">
-    <div class="footer-container">
+  <div class="footer__container container">
+    <div class="footer__main">
+      <div class="footer__left">
+        <a [routerLink]="['/']" class="footer__logo">
+          <img src="icons/favicon.png" alt="Logo" />
+        </a>
+        <p>{{ 'FOOTER.ROLE' | translate }}</p>
+        <p>{{ 'FOOTER.LOCATION' | translate }}</p>
+      </div>
 
-        <div class="footer-left">
-            <p>{{ 'FOOTER.ROLE' | translate }}</p>
-            <p>{{ 'FOOTER.LOCATION' | translate }}</p>
-        </div>
-
-        <div class="footer-right">
-            <a href="https://github.com/TemirlanGashimov" target="_blank" rel="noopener noreferrer">{{ 'FOOTER.LINKS.GITHUB' | translate }}</a>
-            <a href="https://www.linkedin.com/feed/">{{ 'FOOTER.LINKS.LINKEDIN' | translate }}</a>
-            <a href="mailto:gashimov.temerlan@gmail.com">{{ 'FOOTER.LINKS.EMAIL' | translate }}</a>
-            <a routerLink="/legal-notice">{{ 'FOOTER.LINKS.LEGAL' | translate }}</a>
-        </div>
-
+      <div class="footer__right">
+        <a class="footer__link" href="https://github.com/TemirlanGashimov" target="_blank" rel="noopener noreferrer">{{ 'FOOTER.LINKS.GITHUB' | translate }}</a>
+        <a class="footer__link" href="https://www.linkedin.com/feed/">{{ 'FOOTER.LINKS.LINKEDIN' | translate }}</a>
+        <a class="footer__link" href="mailto:gashimov.temerlan@gmail.com">{{ 'FOOTER.LINKS.EMAIL' | translate }}</a>
+        <a class="footer__link" routerLink="/legal-notice">{{ 'FOOTER.LINKS.LEGAL' | translate }}</a>
+      </div>
     </div>
 
-      <div class="footer-center">
-            <p>{{ 'FOOTER.COPYRIGHT' | translate }}</p>
-        </div>
-        </div>
+    <div class="footer__center">
+      <p class="footer__copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
+    </div>
+  </div>
 </footer>
