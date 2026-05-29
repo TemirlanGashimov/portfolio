@@ -3,10 +3,11 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from "@angular/router";
 
 @Component({
+  standalone: true,
   selector: 'app-skills',
   imports: [TranslatePipe, RouterLink],
   templateUrl: './skills.html',
-  styleUrl: './skills.scss',
+  styleUrls: ['./skills.scss'],
 })
 export class Skills {
 

@@ -19,7 +19,7 @@ interface Project {
   imports: [CommonModule, TranslatePipe],
   standalone: true,
   templateUrl: './projects.html',
-  styleUrl: './projects.scss',
+  styleUrls: ['./projects.scss'],
 })
 export class Projects {
 
@@ -64,7 +64,7 @@ export class Projects {
       technologies: ['Angular', 'Firebase', 'TypeScript'],
       image: 'images/projects/dabubble.png',
       modalImage: 'images/projects/dabubble_dialog.png',
-      active: true,
+      active: false,
       description: 'PROJECTS-MODAL.DABUBBLE.DESCRIPTION',
       github: '',
       live: ''

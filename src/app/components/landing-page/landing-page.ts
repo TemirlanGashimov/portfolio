@@ -10,10 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
+  standalone: true,
   selector: 'app-landing-page',
   imports: [Hero, About, Skills, Projects, ContactMe],
   templateUrl: './landing-page.html',
-  styleUrl: './landing-page.scss',
+  styleUrls: ['./landing-page.scss'],
 })
 export class LandingPage implements AfterViewInit{
 

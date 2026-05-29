@@ -10,7 +10,7 @@ import { RouterLink } from "@angular/router";
   standalone: true,
   imports: [ReactiveFormsModule, NgIf, TranslatePipe, RouterLink],
   templateUrl: './contact-me.html',
-  styleUrl: './contact-me.scss',
+  styleUrls: ['./contact-me.scss'],
 })
 export class ContactMe {
 

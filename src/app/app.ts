@@ -7,10 +7,11 @@ import { Header } from './components/landing-page/header/header';
 
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected readonly title = signal('portfolio');

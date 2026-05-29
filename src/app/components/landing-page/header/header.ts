@@ -7,7 +7,7 @@ import { TranslateService, TranslatePipe } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslatePipe, RouterLink ],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  styleUrls: ['./header.scss'],
 })
 export class Header {
 

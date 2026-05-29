@@ -3,9 +3,10 @@ import { RouterLink } from "@angular/router";
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
+  standalone: true,
   selector: 'app-footer',
   imports: [RouterLink, TranslatePipe],
   templateUrl: './footer.html',
-  styleUrl: './footer.scss',
+  styleUrls: ['./footer.scss'],
 })
 export class Footer {}
