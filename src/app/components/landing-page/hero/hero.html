@@ -1,99 +1,95 @@
 <header class="hero">
-  <div class="container">
-  <div class="hero__content">
-    <p>{{ 'HERO.ROLE' | translate }}</p>
-    <h1>Temirlan Gashimov</h1>
-    <div class="hero__buttons">
-      <a class="btn" [routerLink]="['/']" fragment="projects"> <span>{{ 'HERO.CTA_WORK' | translate }}</span></a>
-      <a class="btn" [routerLink]="['/']" fragment="contact-me"><span>{{ 'HERO.CTA_CONTACT' | translate }}</span></a>
-    </div>
-  </div>
-
-  <div class="side side--left">
-    <div class="scroll-indicator">
-      <div class="scroll-indicator__icon">
-        <span class="arrow">↓</span>
+  <div class="hero__container container">
+    <div class="hero__content">
+      <p class="hero__role">{{ 'HERO.ROLE' | translate }}</p>
+      <h1 class="hero__title">Temirlan Gashimov</h1>
+      <div class="hero__buttons">
+        <a class="btn" [routerLink]="['/']" fragment="projects">
+          <span>{{ 'HERO.CTA_WORK' | translate }}</span>
+        </a>
+        <a class="btn" [routerLink]="['/']" fragment="contact-me">
+          <span>{{ 'HERO.CTA_CONTACT' | translate }}</span>
+        </a>
       </div>
-
-      <div class="left__line"></div>
+    </div>
+    <div class="hero__side hero__side--left">
+      <div class="hero__scroll">
+        <div class="hero__scroll-icon"><span class="hero__scroll-arrow">↓</span></div>
+        <div class="hero__line hero__line--left"></div>
+      </div>
+    </div>
+    <div class="hero__side hero__side--right">
+      <div class="hero__socials">
+        <a href="mailto:temerlan.gashimov@gmail.com" class="hero__email">
+          temerlan.gashimov@gmail.com
+        </a>
+        <a
+          href="mailto:temerlan.gashimov@gmail.com"
+          class="hero__social-link hero__social-link--mail"
+        >
+          <img src="icons/mail.png" alt="email" class="hero__social-icon" />
+        </a>
+        <a href="https://github.com/TemirlanGashimov" class="hero__social-link">
+          <img src="icons/github.png" alt="github" class="hero__social-icon" />
+        </a>
+        <a href="https://www.linkedin.com/feed/" class="hero__social-link">
+          <img src="icons/linkedin.png" alt="linkedin" class="hero__social-icon" />
+        </a>
+        <div class="hero__line hero__line--right"></div>
+      </div>
     </div>
   </div>
+  <div class="hero__marquee">
+    <div class="hero__marquee-track">
+      <span class="hero__marquee-item">{{ 'MARQUEE.ROLE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-  <div class="side side--right">
-    
-    <div class="side__socials">
-    
-      <a  href="mailto:temerlan.gashimov@gmail.com" class="side__email">
-        temerlan.gashimov@gmail.com
-      </a>
-      
-      <a href="mailto:temerlan.gashimov@gmail.com" class="mail-icon">
-        <img class="email__side-icon" src="icons/mail.png" alt="email"  />
-      </a>
+      <span class="hero__marquee-item">{{ 'MARQUEE.LOCATION' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <a href="https://github.com/TemirlanGashimov">
-        <img src="icons/github.png" alt="github" />
-      </a>
-      <a href="https://www.linkedin.com/feed/">
-        <img src="icons/linkedin.png" alt="linkedin" />
-      </a>
+      <span class="hero__marquee-item">{{ 'MARQUEE.STATUS' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <div class="right__line"></div>
-    </div>
-  </div>
-  </div>
-
-  <div class="marquee">
-    <div class="marquee__track">
-      <span>{{ 'MARQUEE.ROLE' | translate }}</span>
-      <span>•</span>
-
-      <span>{{ 'MARQUEE.LOCATION' | translate }}</span>
-      <span>•</span>
-
-      <span>{{ 'MARQUEE.STATUS' | translate }}</span>
-      <span>•</span>
-
-      <span>{{ 'MARQUEE.REMOTE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.REMOTE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
       <!-- DUPLIKAT für Loop -->
-      <span>{{ 'MARQUEE.ROLE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.ROLE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.LOCATION' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.LOCATION' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.STATUS' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.STATUS' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.REMOTE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.REMOTE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.ROLE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.ROLE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.LOCATION' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.LOCATION' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.STATUS' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.STATUS' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.REMOTE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.REMOTE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
       <!-- DUPLIKAT für Loop -->
-      <span>{{ 'MARQUEE.ROLE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.ROLE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.LOCATION' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.LOCATION' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.STATUS' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.STATUS' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
 
-      <span>{{ 'MARQUEE.REMOTE' | translate }}</span>
-      <span>•</span>
+      <span class="hero__marquee-item">{{ 'MARQUEE.REMOTE' | translate }}</span>
+      <span class="hero__marquee-separator">•</span>
     </div>
   </div>
 </header>
