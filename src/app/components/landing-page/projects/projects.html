@@ -1,82 +1,100 @@
 <section class="portfolio">
-  <div class="container">
-  <div class="container--projects">
-    <p class="subtitle">{{ 'PORTFOLIO.SUBTITLE' | translate }}</p>
+  <div class="portfolio__container container">
+    <div class="portfolio__wrapper">
+      <p class="portfolio__subtitle">{{ 'PORTFOLIO.SUBTITLE' | translate }}</p>
 
-    <h2 class="title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
+      <h2 class="portfolio__title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
 
-    <p class="description">
-      {{ 'PORTFOLIO.DESCRIPTION' | translate }}
-    </p>
+      <p class="portfolio__description">
+        {{ 'PORTFOLIO.DESCRIPTION' | translate }}
+      </p>
 
-    <div class="projects">
-      <div class="project" *ngFor="let project of activeProjects" (click)="openProject(project)">
-        <p class="project-name">
-          {{ project.name }}
-          <span class="arrow">↗</span>
-        </p>
+      <div class="portfolio__list">
+        @for (project of activeProjects; track project.name) {
+          <div
+            class="portfolio__project"
+            (click)="openProject(project)"
+          >
+            <p class="portfolio__project-name">
+              {{ project.name }}
+              <span class="portfolio__arrow">↗</span>
+            </p>
 
-        <span class="tech">
-          {{ project.technologies.join(' | ') }}
-        </span>
+            <span class="portfolio__tech">
+              {{ project.technologies.join(' | ') }}
+            </span>
 
-        <div class="preview">
-          <img [src]="project.image" [alt]="project.name" />
-        </div>
+            <div class="portfolio__preview">
+              <img class="portfolio__preview-img" [src]="project.image" [alt]="project.name" />
+            </div>
+          </div>
+        }
       </div>
     </div>
-  </div>
   </div>
 </section>
 
-<!--MODAL-->
-<div class="modal" *ngIf="selectedProject" (click)="closeProject()">
- 
-    <div #modalRef class="modal-content" (click)="$event.stopPropagation()">
-    <!--Close-->
-    <span class="close" (click)="closeProject()">✕</span>
+@if (selectedProject) {
+  <div class="modal" (click)="closeProject()">
+    <div #modalRef class="modal__content" (click)="$event.stopPropagation()">
+      <span class="modal__close" (click)="closeProject()">
+        <img
+          class="modal__close-icon modal__close-icon--default"
+          src="icons/close_white.png"
+          alt="Close"
+        />
+        <img
+          class="modal__close-icon modal__close-icon--hover"
+          src="icons/close_hover.png"
+          alt="Close"
+        />
+      </span>
 
-    <!--Left-->
-    <div class="modal-left">
-      <h1>{{ getProjectNumber(selectedProject!) }}</h1>
+      <div class="modal__left">
+        <h1 class="modal__number">{{ getProjectNumber(selectedProject) }}</h1>
 
-      <h2>{{ selectedProject.name }}</h2>
+        <h2 class="modal__name">{{ selectedProject.name }}</h2>
 
-      <p class="modal-title">{{ 'PORTFOLIO.MODAL.ABOUT' | translate }}</p>
+        <p class="modal__title">{{ 'PORTFOLIO.MODAL.ABOUT' | translate }}</p>
 
-      <p>
-        {{ selectedProject.description | translate }}
-      </p>
+        <p class="modal__description">
+          {{ selectedProject.description | translate }}
+        </p>
 
-      <div class="modal-tech">
-        <div class="tech-item" *ngFor="let tech of selectedProject.technologies">
-            
-            <img [src]="techIcons[tech]" [alt]="tech">
-          <span>
-            {{ tech }}
-          </span>
+        <div class="modal__tech">
+          @for (tech of selectedProject.technologies; track tech) {
+            <div class="modal__tech-item">
+              <img class="modal__tech-icon" [src]="techIcons[tech]" [alt]="tech" />
+              <span class="modal__tech-name">
+                {{ tech }}
+              </span>
+            </div>
+          }
+        </div>
+
+        <div class="modal__buttons">
+          <a
+            class="modal__button"
+            href="https://github.com/TemirlanGashimov/EL_POLLO_LOCO"
+            target="_blank"
+          >
+            {{ 'PORTFOLIO.MODAL.GITHUB' | translate }} <span class="modal__button-arrow"> ↗ </span>
+          </a>
+
+          <a class="modal__button" href="#" target="_blank">
+            {{ 'PORTFOLIO.MODAL.LIVE' | translate }} <span class="modal__button-arrow"> ↗ </span>
+          </a>
         </div>
       </div>
 
-      <div class="modal-buttons">
-        <a href="https://github.com/TemirlanGashimov/EL_POLLO_LOCO" target="_blank">
-            {{ 'PORTFOLIO.MODAL.GITHUB' | translate }} <span class="arrow"> ↗ </span>
-        </a>
-
-        <a href="#" target="_blank">
-            {{ 'PORTFOLIO.MODAL.LIVE' | translate }} <span class="arrow"> ↗ </span>
-        </a>
+      <div class="modal__right">
+        <img class="modal__image" [src]="selectedProject.modalImage" [alt]="selectedProject.name" />
       </div>
-    </div>
 
-    <!--Right-->
-    <div class="modal-right">
-      <img [src]="selectedProject.modalImage" [alt]="selectedProject.name" />
+      <button class="modal__next-btn" (click)="nextProject()" [disabled]="activeProjects.length <= 1">
+        <span class="modal__next-text">{{ 'PORTFOLIO.MODAL.NEXT' | translate }}</span>
+        <img class="modal__next-arrow" src="icons/arrow_forward.png" alt="Next Project" />
+      </button>
     </div>
-
-    <button class="next-project" (click)="nextProject()" [disabled]="activeProjects.length <= 1">
-        <span class="text">{{ 'PORTFOLIO.MODAL.NEXT' | translate }}</span>
-        <span class="arrow">→</span>
-    </button>
   </div>
-</div>
+}
