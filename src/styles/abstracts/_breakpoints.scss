@@ -1,25 +1,29 @@
-$mobile: 320px; //done
-$mobile-max: 391px; //done
-$mobile-lg: 710px; //done
-$tablet: 800px; // done
-$desktop: 1024px; //done
-$desktop-m: 1160px;
-// $large: 4000px;
+$breakpoints: (
+  mobile: 320px,
+  mobile-max: 391px,
+  mobile-lg: 710px,
+  tablet: 800px,
+  desktop: 1024px,
+  desktop-m: 1160px,
+  large: 4000px,
+);
 
-@mixin respond($size) {
-  @if $size == mobile {
-    @media (max-width: $mobile) { @content; }
-  } @else if $size == mobile-max {
-    @media (max-width: $mobile-max) { @content; }
-  } @else if $size == mobile-lg {
-    @media (max-width: $mobile-lg) { @content; }
-  } @else if $size == tablet {
-    @media (max-width: $tablet) { @content; }
-  } @else if $size == desktop {
-    @media (max-width: $desktop) { @content; }
-    } @else if $size == desktop-m {
-    @media (max-width: $desktop-m) { @content; }
-  } @else if $size == large {
-    @media (max-width: $large) { @content; }
+@mixin respond($size, $direction: max) {
+  $width: null;
+
+  @if map-has-key($breakpoints, $size) {
+    $width: map-get($breakpoints, $size);
+  } @else {
+    $width: $size;
+  }
+
+  @if $direction == min {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $width) {
+      @content;
+    }
   }
 }

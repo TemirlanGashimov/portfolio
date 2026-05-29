@@ -1,7 +1,45 @@
+// Typography
 $font-main: Karla, sans-serif;
-$font-code: Fira Code, monospace;
+$font-code:
+  Fira Code,
+  monospace;
 
+// Colors
 $primary-color: rgba(61, 207, 182, 1);
+$primary-light: rgba(61, 207, 182, 0.1);
+$primary-hover: rgba(51, 186, 163, 1);
 
+// Dark Theme Palette
+$bg-main: #0b0e14;
+$bg-card: #151922;
+$bg-navbar: rgba(11, 14, 20, 0.8);
+$border-color: rgba(255, 255, 255, 0.08);
+
+// Text Palette
+$text-light: #ffffff;
+$text-secondary: #b0b5c1;
+$text-muted: #64748b;
+
+// Layout & Component Specs
 $btn-radius: 30px;
 $btn-padding: 10px 20px;
+$card-radius: 16px;
+
+// Spacing System (BEM friendly)
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 64px;
+
+// Glow & Shadows
+$glow-primary: 0 0 20px rgba(61, 207, 182, 0.3);
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+// Standardized transitions
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);

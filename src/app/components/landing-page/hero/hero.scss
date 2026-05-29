@@ -12,6 +12,26 @@
   position: relative;
   overflow: hidden;
 
+  // @include respond(tablet) {
+  //   height: calc(100vh - 99px);
+  // }
+
+  @include respond(mobile-lg) {
+    height: calc(100vh - 65px);
+  }
+
+  @include respond(mobile-max) {
+    height: calc(100vh - 65px);
+  }
+
+  @include respond(mobile) {
+    height: calc(100vh - 65px);
+  }
+
+  @media (min-width: 801px) and (max-width: 1024px) {
+    height: calc(100vh - 99px);
+  }
+
   &__content {
     position: relative;
     @include flex-center;
@@ -19,18 +39,94 @@
     text-align: center;
     margin: 160px 60px 0;
     z-index: 2;
+
+    @include respond(desktop-m) {
+      margin: 140px 80px 0;
+    }
+
+    @include respond(mobile-lg) {
+      padding: 24px;
+    }
+
+    @include respond(mobile-max) {
+      padding: 0 16px;
+    }
+
+    @include respond(mobile) {
+      padding: 0 8px;
+    }
   }
 
   &__role {
     font-size: 40px;
     font-weight: 400;
     font-family: $font-code;
+
+    @include respond(desktop-m) {
+      font-size: 36px;
+    }
+
+    @include respond(mobile-lg) {
+      font-size: 26px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 24px;
+    }
+
+    @include respond(mobile) {
+      font-size: 24px;
+    }
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      font-size: 36px;
+    }
   }
 
   &__title {
     font-size: 128px;
     font-weight: 700;
     font-family: $font-main;
+
+    @include respond(desktop-m) {
+      font-size: 96px;
+    }
+
+    @include respond(mobile-lg) {
+      font-size: 62px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 62px;
+    }
+
+    @include respond(mobile) {
+      font-size: 62px;
+    }
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      font-size: 88px;
+    }
+  }
+
+  &__buttons {
+    @include respond(mobile-lg) {
+      gap: 48px;
+    }
+
+    @include respond(mobile-max) {
+      gap: 16px;
+    }
+
+    @include respond(mobile) {
+      gap: 8px;
+    }
+
+    .btn {
+      @include respond(mobile-lg) {
+        padding: 12px 14px;
+      }
+    }
   }
 
   &__scroll {
@@ -63,6 +159,35 @@
     &--left {
       left: 24px;
       top: 306px;
+
+      @include respond(desktop-m) {
+        left: 42px;
+        top: 330px;
+      }
+
+      @include respond(tablet) {
+        left: 32px;
+        top: 270px;
+      }
+
+      @include respond(mobile-lg) {
+        left: 24px;
+        top: 370px;
+      }
+
+      @include respond(mobile-max) {
+        left: 24px;
+        top: 362px;
+      }
+
+      @include respond(mobile) {
+        left: 18px;
+        top: 362px;
+      }
+
+      @media (min-width: 801px) and (max-width: 1024px) {
+        top: 350px;
+      }
     }
 
     &--right {
@@ -72,6 +197,36 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 20px;
+
+      @include respond(desktop-m) {
+        right: 42px;
+        top: 124px;
+      }
+
+      @include respond(tablet) {
+        right: 32px;
+        top: 286px;
+      }
+
+      @include respond(mobile-lg) {
+        right: 24px;
+        top: 378px;
+      }
+
+      @include respond(mobile-max) {
+        right: 24px;
+        top: 388px;
+      }
+
+      @include respond(mobile) {
+        right: 18px;
+        top: 378px;
+      }
+
+      @media (min-width: 801px) and (max-width: 1024px) {
+        right: 64px;
+        top: 124px;
+      }
     }
   }
 
@@ -82,18 +237,66 @@
       z-index: 1;
       height: 200px;
       background: linear-gradient(to bottom, $primary-color);
+
+      @include respond(desktop-m) {
+        height: 200px;
+      }
+
+      @include respond(tablet) {
+        height: 260px;
+      }
+
+      @include respond(mobile-lg) {
+        height: 192px;
+      }
+
+      @include respond(mobile-max) {
+        height: 200px;
+      }
+
+      @include respond(mobile) {
+        height: 200px;
+      }
+
+      @media (min-width: 801px) and (max-width: 1024px) {
+        height: 180px;
+      }
     }
 
     &--right {
       height: 140px;
       background: linear-gradient(to bottom, white);
+
+      @include respond(desktop-m) {
+        height: 130px;
+      }
+
+      @include respond(tablet) {
+        height: 170px;
+      }
+
+      @include respond(mobile-lg) {
+        height: 110px;
+      }
+
+      @include respond(mobile-max) {
+        height: 100px;
+      }
+
+      @include respond(mobile) {
+        height: 110px;
+      }
+
+      @media (min-width: 801px) and (max-width: 1024px) {
+        height: 130px;
+      }
     }
   }
 
   &__socials {
     @include flex-center;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     cursor: pointer;
     position: relative;
     text-decoration: none;
@@ -114,6 +317,10 @@
 
     &--mail {
       display: none;
+
+      @include respond(tablet) {
+        display: block;
+      }
     }
 
     &::before {
@@ -153,6 +360,10 @@
     &:hover {
       color: $primary-color;
     }
+
+    @include respond(tablet) {
+      display: none;
+    }
   }
 
   &__marquee {
@@ -166,6 +377,26 @@
     transform: rotate(-3deg);
     @include flex-center;
     z-index: 1;
+
+    @include respond(tablet) {
+      bottom: 40px;
+    }
+
+    @include respond(mobile-lg) {
+      bottom: 20px;
+    }
+
+    @include respond(mobile-max) {
+      bottom: 24px;
+    }
+
+    @include respond(mobile) {
+      bottom: 32px;
+    }
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      bottom: 28px;
+    }
   }
 
   &__marquee-track {
@@ -181,6 +412,18 @@
     font-size: 32px;
     color: $primary-color;
     font-family: $font-main;
+
+    @include respond(mobile-lg) {
+      font-size: 24px;
+    }
+
+    @include respond(mobile-max) {
+      font-size: 24px;
+    }
+
+    @include respond(mobile) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -208,297 +451,5 @@
 
   100% {
     transform: translateX(-50%);
-  }
-}
-
-@include respond(desktop-m) {
-  .hero__side--left {
-    height: calc(100vh - 98px);
-    top: 161%;
-    left: 52px;
-  }
-
-  .hero__content {
-    margin-top: 100px;
-  }
-
-  .hero__content p {
-    font-size: 36px;
-  }
-
-  .hero__content h1 {
-    font-size: 96px;
-  }
-
-  .side--left {
-    top: 161%;
-    left: 52px;
-  }
-
-  .left__line {
-    height: 180px;
-  }
-
-  .side--right {
-    top: 70%;
-    right: 52px;
-  }
-
-  .right__line {
-    height: 130px;
-  }
-}
-
-@include respond(tablet) {
-  .hero {
-    height: calc(100vh - 99px);
-  }
-
-  .hero__content {
-    margin-top: 80px;
-  }
-
-  .side__email {
-    display: none;
-  }
-
-  .email__side-icon {
-    display: block;
-  }
-
-  .mail-icon {
-    display: block;
-  }
-
-  .side--left {
-    left: 32px;
-    top: 113%;
-  }
-
-  .left__line {
-    height: 190px;
-  }
-
-  .side--right {
-    right: 32px;
-    top: 111%;
-  }
-
-  .right__line {
-    height: 130px;
-  }
-
-  .marquee {
-    bottom: 24px;
-  }
-}
-
-@include respond(mobile-lg) {
-  .hero {
-    height: calc(100vh - 65px);
-  }
-
-  .hero__content {
-    margin-top: 110px;
-    padding: 24px;
-  }
-
-  .hero__content p {
-    font-size: 26px;
-  }
-
-  .hero__content h1 {
-    font-size: 64px;
-  }
-
-  .hero__buttons {
-    gap: 48px;
-  }
-
-  .btn {
-    padding: 12px 14px;
-  }
-  .marquee {
-    bottom: 20px;
-  }
-
-  .marquee span {
-    font-size: 24px;
-  }
-
-  .side--right {
-    right: 24px;
-    top: 123%;
-  }
-
-  .right__line {
-    height: 100px;
-  }
-
-  .side--left {
-    top: 111%;
-    left: 24px;
-  }
-
-  .left__line {
-    height: 205px;
-  }
-}
-
-@include respond(mobile-max) {
-  .hero {
-    height: calc(100vh - 65px);
-  }
-
-  .hero__content {
-    margin-top: 60px;
-    padding: 0 16px 0 16px;
-  }
-
-  .hero__content p {
-    font-size: 24px;
-  }
-
-  .hero__content h1 {
-    font-size: 62px;
-  }
-
-  .hero__buttons {
-    gap: 16px;
-  }
-
-  .marquee {
-    bottom: 14px;
-  }
-
-  .marquee span {
-    font-size: 24px;
-  }
-
-  .side--right {
-    right: 24px;
-    top: 100%;
-  }
-
-  .right__line {
-    height: 150px;
-  }
-
-  .side--left {
-    top: 109%;
-    left: 24px;
-  }
-
-  .left__line {
-    height: 160px;
-  }
-}
-
-@include respond(mobile) {
-  .hero {
-    height: calc(100vh - 65px);
-
-    &__content {
-      margin-top: 110px;
-      padding: 0 8px;
-    }
-
-    &__role {
-      font-size: 24px;
-    }
-
-    &__title {
-      font-size: 62px;
-    }
-
-    &__buttons {
-      gap: 8px;
-    }
-
-    &__marquee {
-      bottom: 10px;
-    }
-
-    &__marquee-item,
-    &__marquee-separator {
-      font-size: 24px;
-    }
-
-    &__side--right {
-      right: 18px;
-      top: 70px;
-    }
-
-    &__line--right {
-      height: 195px;
-    }
-
-    &__side--left {
-      left: 18px;
-      top: 122%;
-    }
-
-    &__line--left {
-      height: 275px;
-    }
-  }
-}
-
-@media (min-width: 627px) and (max-width: 710px) {
-  .side--right {
-    right: 24px;
-    top: 166%;
-  }
-
-  .right__line {
-    height: 130px;
-  }
-
-  .side--left {
-    top: 166%;
-    left: 24px;
-  }
-
-  .left__line {
-    height: 200px;
-  }
-}
-
-@media (min-width: 801px) and (max-width: 1024px) {
-  .hero {
-    height: calc(100vh - 99px);
-  }
-
-  .hero__content {
-    margin-top: 100px;
-  }
-
-  .hero__content p {
-    font-size: 36px;
-  }
-
-  .hero__content h1 {
-    font-size: 88px;
-  }
-
-  .side--left {
-    top: 166%;
-  }
-
-  .left__line {
-    height: 180px;
-  }
-
-  .side--right {
-    top: 72%;
-    right: 64px;
-  }
-
-  .right__line {
-    height: 130px;
-  }
-
-  .marquee {
-    bottom: 28px;
   }
 }

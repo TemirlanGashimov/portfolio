@@ -1,5 +1,73 @@
+@use 'variables' as *;
+
+// Backwards compatibility
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// Powerful Flexbox mixin
+@mixin flex($dir: row, $justify: flex-start, $align: stretch, $gap: null, $wrap: null) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap { gap: $gap; }
+  @if $wrap { flex-wrap: $wrap; }
+}
+
+// CSS Grid helper mixin
+@mixin grid($cols: null, $rows: null, $gap: null, $align: null, $justify: null) {
+  display: grid;
+  @if $cols { grid-template-columns: $cols; }
+  @if $rows { grid-template-rows: $rows; }
+  @if $gap { gap: $gap; }
+  @if $align { align-items: $align; }
+  @if $justify { justify-content: $justify; }
+}
+
+// Perfect absolute positioning center
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Premium glassmorphism effect
+@mixin glassmorphism($bg-opacity: 0.05, $blur: 10px, $border-opacity: 0.1) {
+  background: rgba(255, 255, 255, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+}
+
+// Modern gradient text helper
+@mixin text-gradient($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+// Neon/Glow hover effect
+@mixin hover-glow($glow-color: $primary-color) {
+  box-shadow: 0 0 0 rgba($glow-color, 0);
+  transition: $transition-normal;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($glow-color, 0.4);
+    border-color: $glow-color;
+  }
+}
+
+// Standardized typography mixin
+@mixin typography($size, $weight: 400, $lh: 1.5, $font: $font-main, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lh;
+  font-family: $font;
+  @if $color { color: $color; }
 }

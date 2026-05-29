@@ -1,0 +1,30 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+body {
+  font-family: $font-main;
+  color: $text-light;
+  background-color: $bg-main;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-main;
+  font-weight: 700;
+  color: $text-light;
+  line-height: 1.2;
+}
+
+p {
+  color: $text-light;
+}
+
+code,
+pre {
+  font-family: $font-code;
+}
