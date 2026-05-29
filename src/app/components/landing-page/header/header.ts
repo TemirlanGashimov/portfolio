@@ -5,12 +5,11 @@ import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslatePipe, RouterLink ],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })
 export class Header {
-
   private translate = inject(TranslateService);
   private router = inject(Router);
 
@@ -19,7 +18,7 @@ export class Header {
 
   currentLanguage: 'en' | 'de' = 'en';
 
-  constructor(){
+  constructor() {
     const savedLang = localStorage.getItem('lang') as 'en' | 'de';
 
     if (savedLang) {
@@ -30,15 +29,19 @@ export class Header {
     }
   }
 
-  setLanguage(lang: 'en' | 'de'){
+  setLanguage(lang: 'en' | 'de') {
     this.currentLanguage = lang;
     this.translate.use(lang);
 
     localStorage.setItem('lang', lang);
   }
 
-   toggleMenu() {
+  toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 
   setActive(section: string) {
@@ -47,14 +50,14 @@ export class Header {
 
   scrollTo(section: string) {
     this.activeSection = section;
+    this.menuOpen = false;
 
     const element = document.getElementById(section);
 
     if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-} else {
-  this.router.navigate(['/'],  {fragment: section})
-}
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/'], { fragment: section });
+    }
   }
-
 }
