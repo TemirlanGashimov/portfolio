@@ -1,41 +1,60 @@
 <header class="header">
-  <div class="container">
-    <button class="burger" [class.active]="menuOpen" (click)="toggleMenu()">
+  <div class="header__container container">
+    <button class="header__burger" [class.header__burger--active]="menuOpen" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <div class="nav-links">
-      <nav class="header__nav" [class.open]="menuOpen">
-        <div class="lang-switch">
-          <span (click)="setLanguage('en')" [class.active]="currentLanguage === 'en'">EN</span>
-          <span (click)="setLanguage('de')" [class.active]="currentLanguage === 'de'">DE</span>
+    <div class="header__nav-links">
+      <nav class="header__nav" [class.header__nav--open]="menuOpen">
+        <div class="header__lang-switch">
+          <span
+            class="header__lang-switch-item"
+            (click)="setLanguage('en')"
+            [class.header__lang-switch-item--active]="currentLanguage === 'en'"
+            >EN</span
+          >
+          <span
+            class="header__lang-switch-item"
+            (click)="setLanguage('de')"
+            [class.header__lang-switch-item--active]="currentLanguage === 'de'"
+            >DE</span
+          >
         </div>
 
         <a
           [routerLink]="['/']"
           fragment="about"
           (click)="setActive('about'); closeMenu()"
-          [class.active]="activeSection === 'about'"
+          class="header__nav-link"
+          [class.header__nav-link--active]="activeSection === 'about'"
         >
-          {{ 'ABOUT' | translate }}</a
-        >
+          {{ 'ABOUT' | translate }}
+        </a>
         <a
           [routerLink]="['/']"
           fragment="skills"
           (click)="setActive('skills'); closeMenu()"
-          [class.active]="activeSection === 'skills'"
-          >{{ 'SKILLS' | translate }}</a
+          class="header__nav-link"
+          [class.header__nav-link--active]="activeSection === 'skills'"
         >
+          {{ 'SKILLS' | translate }}
+        </a>
         <a
           [routerLink]="['/']"
           fragment="projects"
           (click)="setActive('projects'); closeMenu()"
-          [class.active]="activeSection === 'projects'"
-          >{{ 'PROJECTS' | translate }}</a
+          class="header__nav-link"
+          [class.header__nav-link--active]="activeSection === 'projects'"
         >
+          {{ 'PROJECTS' | translate }}
+        </a>
       </nav>
+
+      <a [routerLink]="['/']" class="header__logo">
+        <img src="icons/favicon.png" alt="Logo" />
+      </a>
     </div>
   </div>
 </header>
