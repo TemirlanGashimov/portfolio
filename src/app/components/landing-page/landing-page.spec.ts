@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LandingPage } from './landing-page';
+import { TranslateModule } from '@ngx-translate/core';
+import { provideRouter } from '@angular/router';
 
 describe('LandingPage', () => {
   let component: LandingPage;
@@ -8,7 +9,8 @@ describe('LandingPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LandingPage],
+      imports: [LandingPage, TranslateModule.forRoot()],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LandingPage);
