@@ -69,14 +69,12 @@
     }
 
     @include respond(mobile-max) {
-      position: fixed;
       top: 214px;
       left: 74%;
       width: 55%;
     }
 
     @include respond(mobile) {
-      position: fixed;
       top: 217px;
       left: 212px;
       width: 65%;
@@ -188,10 +186,6 @@
     }
 
     @include respond(mobile-max) {
-      right: 20px;
-    }
-
-    @include respond(mobile) {
       right: 20px;
     }
 

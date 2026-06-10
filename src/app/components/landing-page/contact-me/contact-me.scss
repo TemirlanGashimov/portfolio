@@ -256,10 +256,6 @@
       @include respond(desktop) {
         font-size: 16px;
       }
-
-      @include respond(mobile) {
-        font-size: 16px;
-      }
     }
 
     &-link {

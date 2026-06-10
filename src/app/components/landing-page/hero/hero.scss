@@ -16,14 +16,6 @@
     height: calc(100vh - 65px);
   }
 
-  @include respond(mobile-max) {
-    height: calc(100vh - 65px);
-  }
-
-  @include respond(mobile) {
-    height: calc(100vh - 65px);
-  }
-
   @media (min-width: 801px) and (max-width: 1024px) {
     height: calc(100vh - 99px);
   }
@@ -70,10 +62,6 @@
       font-size: 24px;
     }
 
-    @include respond(mobile) {
-      font-size: 24px;
-    }
-
     @media (min-width: 801px) and (max-width: 1024px) {
       font-size: 36px;
     }
@@ -89,14 +77,6 @@
     }
 
     @include respond(mobile-lg) {
-      font-size: 62px;
-    }
-
-    @include respond(mobile-max) {
-      font-size: 62px;
-    }
-
-    @include respond(mobile) {
       font-size: 62px;
     }
 
@@ -154,42 +134,25 @@
 
     &--left {
       left: 44px;
-      top: 402px;
+      top: 310px;
 
       @include respond(desktop-m) {
         left: 42px;
-        top: 422px;
-      }
-
-      @include respond(tablet) {
-        left: 32px;
-        top: 362px;
+        top: 373px;
       }
 
       @include respond(mobile-lg) {
         left: 24px;
-        top: 464px;
-      }
-
-      @include respond(mobile-max) {
-        left: 24px;
-        top: 454px;
-      }
-
-      @include respond(mobile) {
-        left: 18px;
-        top: 454px;
       }
 
       @media (min-width: 801px) and (max-width: 1024px) {
-        top: 440px;
         left: 54px;
       }
     }
 
     &--right {
       right: 44px;
-      top: 176px;
+      top: 84px;
       @include flex-center;
       flex-direction: column;
       align-items: flex-end;
@@ -197,32 +160,25 @@
 
       @include respond(desktop-m) {
         right: 42px;
-        top: 216px;
+        top: 124px;
       }
 
       @include respond(tablet) {
-        right: 32px;
-        top: 378px;
+        top: 315px;
       }
 
       @include respond(mobile-lg) {
         right: 24px;
-        top: 470px;
-      }
-
-      @include respond(mobile-max) {
-        right: 24px;
-        top: 480px;
+        top: 380px;
       }
 
       @include respond(mobile) {
         right: 18px;
-        top: 470px;
       }
 
       @media (min-width: 801px) and (max-width: 1024px) {
         right: 54px;
-        top: 215px;
+        top: 120px;
       }
     }
   }
@@ -236,27 +192,11 @@
       background: linear-gradient(to bottom, $primary-color);
 
       @include respond(desktop-m) {
-        height: 200px;
-      }
-
-      @include respond(tablet) {
-        height: 260px;
+        height: 157px;
       }
 
       @include respond(mobile-lg) {
-        height: 192px;
-      }
-
-      @include respond(mobile-max) {
-        height: 200px;
-      }
-
-      @include respond(mobile) {
-        height: 200px;
-      }
-
-      @media (min-width: 801px) and (max-width: 1024px) {
-        height: 180px;
+        height: 190px;
       }
     }
 
@@ -269,23 +209,15 @@
       }
 
       @include respond(tablet) {
-        height: 170px;
+        height: 140px;
       }
 
       @include respond(mobile-lg) {
         height: 110px;
       }
 
-      @include respond(mobile-max) {
-        height: 100px;
-      }
-
-      @include respond(mobile) {
-        height: 110px;
-      }
-
       @media (min-width: 801px) and (max-width: 1024px) {
-        height: 130px;
+        height: 134px;
       }
     }
   }
@@ -375,10 +307,6 @@
     @include flex-center;
     z-index: 1;
 
-    @include respond(tablet) {
-      bottom: 40px;
-    }
-
     @include respond(mobile-lg) {
       bottom: 20px;
     }
@@ -411,14 +339,6 @@
     font-family: $font-main;
 
     @include respond(mobile-lg) {
-      font-size: 24px;
-    }
-
-    @include respond(mobile-max) {
-      font-size: 24px;
-    }
-
-    @include respond(mobile) {
       font-size: 24px;
     }
   }

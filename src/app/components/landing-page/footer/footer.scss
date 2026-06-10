@@ -35,9 +35,6 @@
     @include respond(mobile-lg) {
       padding: 24px 0;
     }
-    @include respond(mobile-max) {
-      padding: 24px 0;
-    }
   }
 
   &__left,
@@ -81,9 +78,6 @@
       @include respond(mobile-max) {
         font-size: 16px;
       }
-      @include respond(mobile) {
-        font-size: 16px;
-      }
     }
   }
 
@@ -109,9 +103,6 @@
       font-size: 18px;
     }
     @include respond(mobile-max) {
-      font-size: 16px;
-    }
-    @include respond(mobile) {
       font-size: 16px;
     }
 
