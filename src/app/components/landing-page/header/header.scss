@@ -59,7 +59,7 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+      background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-gradient-end 93.28%);
       border-radius: 30px;
       border: 1px solid $primary-color;
       opacity: 0;
@@ -92,7 +92,7 @@
     position: relative;
     font-family: $font-code;
     text-decoration: none;
-    color: white;
+    color: $text-light;
     transition: color 0.25s ease;
     font-size: 20px;
 
@@ -137,7 +137,7 @@
     width: fit-content;
 
     &:hover {
-      border-color: white;
+      border-color: $text-light;
     }
   }
 
@@ -158,7 +158,7 @@
 
     &--active {
       background-color: $primary-color;
-      color: #fff;
+      color: $text-light;
       border-radius: 30px;
       transition: all 0.2s ease;
     }
@@ -183,7 +183,7 @@
       span {
         width: 25px;
         height: 3px;
-        background: white;
+        background: $text-light;
       }
     }
 

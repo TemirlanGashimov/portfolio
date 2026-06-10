@@ -3,7 +3,7 @@
 @use '../../../styles/abstracts/breakpoints' as *;
 
 .legal {
-  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-gradient-end 93.28%);
   color: $primary-color;
   padding: 80px 0;
 
@@ -61,7 +61,7 @@
     font-size: 19px;
     font-weight: 700;
     font-family: $font-main;
-    color: white;
+    color: $text-light;
   }
 
   &__text,

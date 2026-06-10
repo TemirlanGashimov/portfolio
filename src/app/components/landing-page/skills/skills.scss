@@ -4,7 +4,7 @@
 @use '../../../../styles/abstracts/breakpoints' as *;
 
 .skills {
-  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 1) 0%, #1c1c1c 100%);
+  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, $bg-gradient-end 0%, $bg-dark 100%);
   padding: 0px 96px 144px;
 
   @include respond(desktop) {
@@ -75,7 +75,7 @@
     border: 1px solid $primary-color;
     border-radius: 30px;
     padding: 40px;
-    background: rgba(43, 212, 189, 0.05);
+    background: rgba($primary-color, 0.05);
     backdrop-filter: blur(10px);
 
     @include respond(desktop) {
@@ -114,7 +114,7 @@
   }
 
   &__text {
-    color: white;
+    color: $text-light;
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 18px;
@@ -271,7 +271,7 @@
     transform: translateX(-50%) translateY(10px) scale(0.95);
     width: 170px;
     padding: 8px 8px 16px 8px;
-    background: white;
+    background: $text-light;
     border-radius: 20px;
     color: $primary-color;
     text-align: center;

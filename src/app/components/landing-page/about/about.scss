@@ -3,7 +3,7 @@
 @use '../../../../styles/abstracts/breakpoints' as *;
 
 .about-me {
-  background-color: rgba(28, 28, 28, 1);
+  background-color: $bg-dark;
   padding: 144px 110px;
 
   @include respond(desktop) {
@@ -102,7 +102,7 @@
     padding: 40px;
     border: 1px solid $primary-color;
     border-radius: 30px;
-    background: rgba(43, 212, 189, 0.05);
+    background: rgba($primary-color, 0.05);
     backdrop-filter: blur(10px);
 
     @include respond(desktop) {
@@ -138,7 +138,7 @@
   }
 
   &__text {
-    color: white;
+    color: $text-light;
     line-height: 1.6;
     margin-bottom: 30px;
     font-size: 18px;
@@ -186,7 +186,7 @@
     }
 
     &-text {
-      color: #aaa;
+      color: rgba($text-light, 0.7);
       font-size: 18px;
       line-height: 1.2;
 
@@ -196,7 +196,7 @@
     }
 
     &:hover &-text {
-      color: white;
+      color: $text-light;
       transform: translateY(-1px);
       transition: 0.1s;
     }

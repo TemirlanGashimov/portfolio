@@ -2,7 +2,7 @@
 @use '../../../../styles/abstracts/breakpoints' as *;
 
 .footer {
-  background: rgb(28, 28, 28);
+  background: $bg-dark;
   padding: 64px 96px 64px;
 
   @include respond(desktop) {
@@ -99,7 +99,7 @@
   }
 
   &__link {
-    color: white;
+    color: $text-light;
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;

@@ -11,6 +11,8 @@ $primary-hover: rgba(51, 186, 163, 1);
 
 // Dark Theme Palette
 $bg-main: #0b0e14;
+$bg-dark: #1c1c1c;
+$bg-gradient-end: #08463b;
 $bg-card: #151922;
 $bg-navbar: rgba(11, 14, 20, 0.8);
 $border-color: rgba(255, 255, 255, 0.08);
@@ -19,6 +21,10 @@ $border-color: rgba(255, 255, 255, 0.08);
 $text-light: #ffffff;
 $text-secondary: #b0b5c1;
 $text-muted: #64748b;
+
+// Validation & Alerts
+$error-color: #ff6b6b;
+$error-dark: #c62828;
 
 // Layout & Component Specs
 $btn-radius: 30px;

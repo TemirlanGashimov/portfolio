@@ -136,7 +136,7 @@
     border: 2px solid $primary-color;
     border-radius: $btn-radius;
     @include flex-center;
-    color: white;
+    color: $text-light;
     font-size: 18px;
     margin-bottom: 10px;
     position: relative;
@@ -262,7 +262,7 @@
 
     &--right {
       height: 150px;
-      background: linear-gradient(to bottom, white);
+      background: linear-gradient(to bottom, $text-light);
 
       @include respond(desktop-m) {
         height: 130px;
@@ -297,7 +297,7 @@
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    color: white;
+    color: $text-light;
     font-size: 16px;
 
     &:hover {
@@ -350,7 +350,7 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-decoration: none;
-    color: white;
+    color: $text-light;
     font-size: 16px;
     display: block;
 
@@ -369,7 +369,7 @@
     width: 100%;
     height: 56px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba($text-light, 0.05);
     backdrop-filter: blur(3px);
     transform: rotate(-3deg);
     @include flex-center;

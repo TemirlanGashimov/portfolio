@@ -3,7 +3,7 @@
 @use '../../../../styles/abstracts/breakpoints' as *;
 
 .portfolio {
-  background-color: rgba(28, 28, 28, 1);
+  background-color: $bg-dark;
   padding: 1px 96px 16px 96px;
 
   @include respond(desktop) {
@@ -234,7 +234,7 @@
     border-radius: 30px;
     border: 1px solid $primary-color;
     position: relative;
-    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+    background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-gradient-end 93.28%);
 
     @include respond(desktop) {
       width: 95%;
@@ -409,7 +409,7 @@
     border-radius: 30px;
     margin-right: 20px;
     text-decoration: none;
-    color: white;
+    color: $text-light;
     transition: 0.3s ease;
 
     @include respond(desktop) {
@@ -564,7 +564,7 @@
     transition: all 0.3s ease;
 
     .modal__next-btn:hover & {
-      color: white;
+      color: $text-light;
     }
   }
 
